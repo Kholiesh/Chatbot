@@ -1,0 +1,375 @@
+import streamlit as st
+import httpx
+
+# --- Konfigurasi Global ---
+LIGHTRAG_API_URL = "http://localhost:9621/api/chat"
+DEFAULT_MODEL = "llama3:8b"
+
+# --- Kumpulan Template Prompt Simulasi ---
+# --- Kumpulan Template Prompt ---
+# BASE_PROMPT_TEXT diadaptasi dari cek.py untuk konsistensi
+BASE_PROMPT_TEXT = """Anda adalah Alma Learn, seorang pelatih pegawai yang supportif dan ramah. Anda sedang berbicara dengan '{user_name}' ({user_role}). Balas SELALU dalam Bahasa Indonesia. JANGAN PERNAH menyebutkan 'konteks'. Gunakan informasi yang diberikan untuk menjawab.
+ATURAN UTAMA: Balas HANYA dalam BAHASA INDONESIA. Seluruh teks dari awal hingga akhir harus dalam Bahasa Indonesia."""
+
+# QA_INSTRUCTION_TEMPLATE dari cek.py
+QA_INSTRUCTION_TEMPLATE = f"""{BASE_PROMPT_TEXT}
+RIWAYAT OBROLAN SEBELUMNYA:
+---
+{{history_text}}
+---
+"""
+
+# QUIZ_GENERATION_TEMPLATE dari cek.py
+QUIZ_GENERATION_TEMPLATE = f"""{BASE_PROMPT_TEXT}
+PERAN ANDA SEKARANG ADALAH PEMBUAT KUIS. Berdasarkan topik dan konteks yang Anda terima, buatlah SATU pertanyaan kuis (esai singkat atau pilihan ganda, pilih salah satu yang paling sesuai) yang relevan untuk menguji pemahaman pengguna. Ajukan pertanyaan itu secara langsung dan jelas.
+"""
+
+# QUIZ_EVALUATION_TEMPLATE dari cek.py
+QUIZ_EVALUATION_TEMPLATE = f"""{BASE_PROMPT_TEXT}
+PERAN ANDA SEKARANG ADALAH EVALUATOR. Pertanyaan kuis sebelumnya adalah: '{{quiz_question}}'. Jawaban dari pengguna adalah: '{{user_answer}}'. Berdasarkan konteks RAG, evaluasi apakah jawaban tersebut benar. Berikan apresiasi jika benar, atau berikan koreksi yang ramah dan semangat jika salah.
+"""
+# PROMPT #1: Untuk membuat skenario awal dari topik yang diberikan pengguna
+SIM_GENERATE_PROMPT = """
+ATURAN UTAMA: GUNAKAN BAHASA INDONESIA. Seluruh teks dari awal hingga akhir harus dalam Bahasa Indonesia.
+
+Anda adalah seorang perancang skenario simulasi pelatihan. Berdasarkan informasi dan konteks yang diberikan, buatlah sebuah skenario simulasi yang detail.
+Topik yang dirancang sebagai berikut: {topic}
+Skenario ini harus mencakup:
+1.  Peran yang akan Anda mainkan sebagai seorang pelanggan.
+2.  Situasi spesifik yang terjadi.
+ATURAN: 
+1. GUNAKAN KONTEKS YANG DIBERIKAN SEBAGAI SUMBER DALAM MERANCANG SKENARIO NYA.
+2. HANYA TERDAPAT DUA PERAN: PELANGGAN DAN {user_role}.
+
+Setelah membuat skenario, buatlah satu kalimat percakapan yang mengawali peranmu sebagai pelanggan pada skenario yang telah dibuat.
+
+Format balasan Anda HARUS seperti ini:
+SCENARIO_START
+[Tulis skenario detail di sini]
+SCENARIO_END
+[Tulis kalimat pembuka di sini]
+"""
+
+# PROMPT #2: Untuk interaksi bolak-balik selama simulasi
+SIM_INTERACTION_PROMPT = """
+Anda sedang berada dalam mode simulasi. Lanjutkan percakapan simulasi ini. 
+SKENARIO UTAMA:
+---
+{scenario}
+---
+
+RIWAYAT PERCAKAPAN SEBELUMNYA:
+---
+{history}
+---
+Peran anda adalah sebagai pelanggan. Anda sedang berinteraksi dengan pegawai yang berperan sebagai {user_role} Anda HARUS tetap dalam peran Anda. Jangan keluar dari peran Anda.
+
+Balas pesan terakhir dari pengguna sesuai dengan peran Anda dalam skenario. GUNAKAN BAHASA INDONESIA YANG BAIK DAN BENAR. Tidak perlu menjelaskan kembali skenario yang diberikan! Cukup lanjutkan percakapan dengan menanggapi pesan terakhir dari pengguna.
+"""
+
+# PROMPT #3: Untuk memberikan evaluasi di akhir
+SIM_EVALUATION_PROMPT = """
+ATURAN UTAMA: Balas HANYA dalam BAHASA INDONESIA. Seluruh teks dari awal hingga akhir harus dalam Bahasa Indonesia.
+Anda adalah Alma Learn, seorang pelatih pegawai di Toko GoBIG. Simulasi baru saja berakhir.
+
+SKENARIO YANG DIJALANKAN:
+---
+{scenario}
+---
+
+TRANSKRIP LENGKAP SIMULASI:
+---
+{history}
+---
+PENTING: Dalam transkrip di atas, pesan dengan label 'user' adalah dari '{user_name}' yang berperan sebagai '{user_role}'. Pesan dengan label 'assistant' adalah dari AI yang berperan sebagai pelanggan.
+
+Tugas Anda: Berdasarkan transkrip, berikan evaluasi yang **SINGKAT DAN TO THE POINT** terhadap kinerja '{user_name}' dalam perannya sebagai '{user_role}'.
+
+Gunakan format poin-poin berikut:
+- **👍 Poin Positif:** (Sebutkan 1-2 hal yang sudah bagus dalam satu kalimat).
+- **💡 Area Peningkatan:** (Sebutkan 1 saran perbaikan paling penting dalam satu kalimat).
+- **⭐ Kesimpulan:** (Berikan satu kalimat penyemangat).
+Gunakan konteks yang ada untuk memberikan umpan balik yang relevan.
+DORONG PENGGUNA UNTUK TERUS BELAJAR DAN MEMPERBAIKI DIRI.
+"""
+
+
+class Chatbot:
+    
+    def __init__(self, api_url: str, model: str):
+        self.api_url = api_url
+        self.model = model
+        self._initialize_session_state()
+
+    def _initialize_session_state(self):
+        if "messages" not in st.session_state:
+            st.session_state.messages = []
+            st.session_state.quiz_state = None
+            st.session_state.simulation_context = None #nambah 1
+
+    
+    def login(self):
+        col1, col2, col3, col4, col5 = st.columns((1, 2, 1, 2, 1))
+        with col3:
+            st.image("F:\AA\last\container\wave.png", width=100)
+        st.info("Mari berkenalan dengan Alma!")
+        with st.form("login_form"):
+            name = st.text_input("Nama Anda", placeholder="Masukkan nama Anda")
+            role = st.selectbox("Pilih Peran", ("Pramuniaga", "Admin Sosial Media", "Kasir","Host Live","Pemasang Senar"))
+            mode = st.selectbox("Mode Interaksi", ("Tanya-Jawab", "Kuis Interaktif", "Simulasi"))
+            submit_button = st.form_submit_button("Mulai Chat")
+            if submit_button and name and role:
+                st.session_state.user_name = name
+                st.session_state.user_role = role
+                st.session_state.user_mode = mode
+                st.session_state.messages.append({"role": "assistant", "content": f"Halo {name}! Saya Alma, siap membantu Anda mengembangkan peran sebagai {role} di Toko GoBIG."})
+                st.rerun()
+        
+    
+    def get_response(self, user_query: str, instruction: str): # Mengadaptasi signature dari cek.py
+        print(f'pesan yang diterima dari pengguna: {st.session_state.simulation_context}')
+        # Di dalam def get_response(...):
+        apakah_interaksi = (st.session_state.simulation_context and 
+        st.session_state.simulation_context.get('status') == 'active')
+
+        if st.session_state.user_mode == "Simulasi" and apakah_interaksi:
+            pesan_ke_llm = f"{instruction}\n\n{user_query}"
+            final_prompt_structure = f"/bypass {pesan_ke_llm}"
+        else:
+            final_prompt_structure = f"/[{instruction}] {user_query}"
+        
+        try:
+            print(f'pesan yang dikirimkan ke LLM: {final_prompt_structure}')
+            messages_to_api = [{"role": "user", "content": final_prompt_structure}]
+            payload = {"model": self.model, "messages": messages_to_api, "stream": False}
+            with httpx.Client(timeout=300.0) as client:
+                response = client.post(self.api_url, json=payload)
+                response.raise_for_status()
+            hasil = response.json()
+            print(f'respon llm: {hasil["message"]["content"]}') # Untuk debugging
+            return hasil['message']['content']
+            
+        except Exception as e:
+            return f"Terjadi kesalahan: {e}"  
+    def tampilan(self):
+        user_name = st.session_state.user_name
+        user_role = st.session_state.user_role
+        mode = st.session_state.user_mode
+
+        st.sidebar.header("Status Sesi:")
+        st.sidebar.info(f"**Pengguna:** {user_name}")
+        st.sidebar.warning(f"**Peran:** {user_role}")
+        st.sidebar.success(f"**Mode:** {mode}")
+        #ini fitur buat ganti mode secara langsung: tapi kemarin ada masalah jadi ga diaktifkan, karena pas refresh jadinya keubah ke pertanyaannya
+        # mode = st.sidebar.selectbox("Ganti Mode Interaksi", ("Tanya-Jawab", "Kuis Interaktif", "Simulasi"))
+        # if "user_mode" in st.session_state and mode != st.session_state.user_mode:
+        #     st.session_state.messages = []
+        #     st.session_state.quiz_state = None
+        # st.session_state.user_mode = mode
+
+        if st.sidebar.button("Mulai Sesi Baru"):
+            for key in ["user_name","user_role","user_mode","messages","quiz_state","simulation_context"]:
+                if key in st.session_state:
+                    del st.session_state[key]
+            st.rerun()
+        
+        for message in st.session_state.messages:
+                with st.chat_message(message["role"]):
+                    st.markdown(message["content"])
+        
+        is_waiting_for_answer = (mode == "Kuis Interaktif" and st.session_state.quiz_state and st.session_state.quiz_state['status'] == 'menunggu_jawaban')
+
+        if is_waiting_for_answer:
+            if st.button("🔄 Ganti Topik Kuis"):
+                st.session_state.messages.append({"role": "assistant", "content": "Baik, kuis sebelumnya dibatalkan. Silakan masukkan topik baru untuk kuis di bawah ini."})
+                st.session_state.quiz_state = None
+                st.rerun()
+
+        if is_waiting_for_answer:
+            placeholder_text = f"Ketik jawaban Anda untuk kuis topik: {st.session_state.quiz_state['topik']}"
+        elif mode == "Kuis Interaktif":
+            placeholder_text = "Masukkan topik kuis, misalnya (SOP Refund)"
+        elif mode == "Simulasi": # Placeholder untuk mode simulasi
+            placeholder_text = "Masukkan topik simulasi yang Anda inginkan..."
+        else:
+            placeholder_text = "Mau belajar apa hari ini?"
+
+        if st.session_state.user_mode and mode != "Simulasi":
+            if prompt := st.chat_input(placeholder_text, disabled=False):
+                with st.chat_message("user"):
+                    st.markdown(prompt)
+                st.session_state.messages.append({"role": "user", "content": prompt})
+
+                with st.chat_message("assistant"):
+                    with st.spinner("Alma learn sedang berpikir..."):
+                        # Perbaikan pada bagian history_text untuk menghindari SyntaxError
+                        history_parts = []
+                        # Iterasi melalui semua pesan kecuali pesan terakhir (prompt pengguna saat ini)
+                        for msg in st.session_state.messages[:-1]: 
+                            history_parts.append(f"{msg['role']}: {msg['content']}")
+                        history_text = "\n".join(history_parts)
+                        
+                        final_instruction = ""
+                        query_for_rag = ""
+                        is_quiz_generation = False
+
+                        if mode == "Kuis Interaktif":
+                            if is_waiting_for_answer:
+                                quiz_info = st.session_state.quiz_state
+                                final_instruction = QUIZ_EVALUATION_TEMPLATE.format(
+                                    user_name=user_name, user_role=user_role,
+                                    history_text=history_text, 
+                                    quiz_question=quiz_info['soal'], 
+                                    user_answer=prompt,
+                                )
+                                query_for_rag = quiz_info['topik']
+                                st.session_state.quiz_state = None # Reset quiz_state setelah evaluasi
+                            else:
+                                final_instruction = QUIZ_GENERATION_TEMPLATE.format(
+                                    user_name=user_name, user_role=user_role,
+                                    history_text=history_text
+                                )
+                                # Logika untuk mengekstrak topik dari prompt
+                                topic = prompt.split(":", 1)[-1].strip() if ":" in prompt else prompt.split("tentang", 1)[-1].strip() if "tentang" in prompt else prompt
+                                query_for_rag = topic
+                                st.session_state.quiz_state = {'status': 'menunggu_jawaban', 'topik': topic, 'soal': ''}
+                                is_quiz_generation = True
+                        # elif mode == "Simulasi": # Logika untuk mode simulasi
+                        #     final_instruction = SIMULATION_TEMPLATE.format(
+                        #         user_name=user_name, user_role=user_role,
+                        #         history_text=history_text
+                        #     )
+                        #     query_for_rag = prompt # Prompt pengguna adalah skenario simulasi
+                        #     if st.session_state.quiz_state: # Pastikan quiz_state direset jika beralih mode
+                        #         st.session_state.quiz_state = None
+                        else: # Mode Tanya-Jawab (default)
+                            final_instruction = QA_INSTRUCTION_TEMPLATE.format(
+                                user_name=user_name, user_role=user_role,
+                                history_text=history_text
+                            )
+                            print(f'instruksi: {final_instruction}') # Untuk debugging
+                            query_for_rag = prompt
+                            if st.session_state.quiz_state: # Pastikan quiz_state direset jika beralih mode
+                                st.session_state.quiz_state = None
+
+                        assistant_response = self.get_response(user_query=query_for_rag, instruction=final_instruction)
+                        
+                        if is_quiz_generation:
+                            st.session_state.quiz_state['soal'] = assistant_response
+
+                    st.session_state.messages.append({"role": "assistant", "content": assistant_response})
+                    st.rerun()
+        else:
+                        # STATE 1: Simulasi belum dimulai (simulation_context is None)
+            if st.session_state.simulation_context is None:
+                if prompt := st.chat_input(placeholder_text, disabled=False):
+                    st.session_state.messages.append({"role": "user", "content": prompt})
+
+                    with st.chat_message("assistant"):
+                        with st.spinner("Alma sedang merancang skenario..."):
+                            # Panggil LLM untuk membuat skenario
+                            instruction = SIM_GENERATE_PROMPT.format(topic=prompt, user_role=user_role)
+                            response = self.get_response(user_query=prompt, instruction=instruction)
+
+                            if response:
+                                # Parsing respons untuk memisahkan skenario dan pesan pembuka
+                                try:
+                                    parts = response.split("SCENARIO_END")
+                                    scenario_text = parts[0].replace("SCENARIO_START", "").strip()
+                                    opening_message = parts[1].strip()
+
+                                    # Inisialisasi konteks simulasi
+                                    st.session_state.simulation_context = {
+                                        'status': 'active',
+                                        'scenario': scenario_text
+                                    }
+                                    st.session_state.messages.append({"role": "assistant", "content": opening_message})
+                                    st.rerun()
+                                except Exception:
+                                    error_msg = "Maaf, saya gagal membuat skenario. Coba topik lain."
+                                    st.session_state.messages.append({"role": "assistant", "content": error_msg})
+                                    st.rerun()
+            
+            # STATE 2: Simulasi sedang aktif (status == 'active')
+            elif st.session_state.simulation_context['status'] == 'active':
+                with st.expander("Lihat Skenario 📝", expanded=True):
+                    st.warning(st.session_state.simulation_context['scenario'])
+
+                if st.button("Selesaikan & Evaluasi Simulasi"):
+                    st.session_state.simulation_context['status'] = 'evaluating'
+                    st.rerun()
+
+                if prompt := st.chat_input("Ketik respons Anda dalam simulasi..."):
+                    with st.chat_message("user"):
+                        st.markdown(prompt)
+                    st.session_state.messages.append({"role": "user", "content": prompt})
+
+                    with st.chat_message("assistant"):
+                        with st.spinner("Alma (sebagai aktor) sedang berpikir..."):
+                            history_str = "\n".join([f"{msg['role']}: {msg['content']}" for msg in st.session_state.messages])
+                            instruction = SIM_INTERACTION_PROMPT.format(
+                                scenario=st.session_state.simulation_context['scenario'],
+                                history=history_str,
+                                user_role=user_role
+                            )
+                            response = self.get_response(user_query=prompt, instruction=instruction)
+                            if response:
+                                st.session_state.messages.append({"role": "assistant", "content": response})
+                                st.rerun()
+            
+            # STATE 3: Waktunya Evaluasi (status == 'evaluating')
+            elif st.session_state.simulation_context['status'] == 'evaluating':
+                with st.spinner("Simulasi selesai. Alma sedang menganalisis percakapan Anda..."):
+                    history_str = "\n".join([f"{msg['role']}: {msg['content']}" for msg in st.session_state.messages])
+                    instruction = SIM_EVALUATION_PROMPT.format(
+                        scenario=st.session_state.simulation_context['scenario'],
+                        history=history_str,
+                        user_name=user_name, user_role=user_role
+                    )
+                    # Untuk evaluasi, 'user_query' bisa kita isi ringkasan saja
+                    summary_query = "Tolong berikan evaluasi berdasarkan transkrip."
+                    evaluation = self.get_response(user_query=summary_query, instruction=instruction)
+                    
+                    if evaluation:
+                        st.success("Berikut adalah hasil evaluasi dari simulasi:")
+                        st.markdown(evaluation)
+                        st.session_state.messages.append({"role": "assistant", "content": evaluation})
+
+                    # Hentikan status evaluasi agar tidak berulang
+                    st.session_state.simulation_context['status'] = 'finished'
+                    st.rerun()
+
+            # STATE 4: Simulasi sudah selesai sepenuhnya
+            elif st.session_state.simulation_context['status'] == 'finished':
+                st.info("Sesi simulasi ini telah berakhir.")
+                if st.button("🔁 Mulai Sesi Simulasi Baru"):
+                    # 1. Hapus konteks simulasi dan kuis yang lama
+                    if "simulation_context" in st.session_state:
+                        del st.session_state.simulation_context
+                    if "quiz_state" in st.session_state:
+                        del st.session_state.quiz_state
+                    # 2. Reset riwayat chat ke pesan selamat datang yang baru
+                    user_name = st.session_state.user_name
+                    user_role = st.session_state.user_role
+                    st.session_state.messages = [
+                        {"role": "assistant", "content": f"Sesi sebelumnya telah selesai. Halo lagi, {user_name}! Siap untuk memulai topik simulasi baru sebagai {user_role}?"}
+                    ]
+                    st.session_state.simulation_context = None
+                    st.rerun()
+
+    def run_ui(self):
+        st.set_page_config(page_title="Alma Learn GoBIG", page_icon="🏸")
+        st.title("Alma Learn GoBIG")
+        st.write("Selamat datang! Mari tingkatkan kompetensi bersama Alma!")
+
+        if "user_name" not in st.session_state:
+            self.login()
+        else:
+            self.tampilan()
+
+if __name__ == "__main__":
+    alma = Chatbot(
+        api_url=LIGHTRAG_API_URL,
+        model=DEFAULT_MODEL
+    )
+    alma.run_ui()
