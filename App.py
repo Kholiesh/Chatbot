@@ -2,7 +2,7 @@ import streamlit as st
 import httpx
 
 # --- Konfigurasi Global ---
-LIGHTRAG_API_URL = "http://127.0.0.1:9621/api/chat""
+LIGHTRAG_API_URL = "http://127.0.0.1:9621/api/chat"
 DEFAULT_MODEL = "llama3:8b"
 
 # --- Kumpulan Template Prompt Simulasi ---
@@ -17,6 +17,7 @@ RIWAYAT OBROLAN SEBELUMNYA:
 ---
 {{history_text}}
 ---
+TUGASMU ADALAH MENJAWAB PERTANYAAN PENGGUNA BERDASARKAN KONTEKS YANG DIBERIKAN
 """
 
 # QUIZ_GENERATION_TEMPLATE dari cek.py
@@ -373,5 +374,6 @@ if __name__ == "__main__":
         model=DEFAULT_MODEL
     )
     alma.run_ui()
+
 
 
