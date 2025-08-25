@@ -1,0 +1,450 @@
+{
+  "doc-b9160bebdebb7620bcd050a2c53ac47a": {
+    "entity_names": [
+      "Power String\"<|\"Durability String is a type of string that is known for its durability and is often used by beginners.",
+      "pemain bermain bulu tangkis",
+      "pantulan kok",
+      "Senar Raket Badminton\"<|\"Cara wrote an article about Senar Raket Badminton, which includes information on types of strings.",
+      "Anda",
+      "Oleh",
+      "Kualitas Raket Badminton\"<|\"Cara wrote an article about Kualitas Raket Badminton, which includes information on the quality of badminton rackets.",
+      "Kualitas Raket Badminton",
+      "pukulan yang kuat",
+      "Durability String",
+      "Kecepatan Raket Badminton\"<|\"The quality and speed of badminton rackets are related as they both impact the performance of the racket.",
+      "Control String\"<|\"Power String and Control String are two different types of badminton racket strings with distinct characteristics.",
+      "Cara",
+      "tarikan senar yang tinggi",
+      "Power String"
+    ],
+    "count": 15,
+    "create_time": 1756077851,
+    "update_time": 1756077851,
+    "_id": "doc-b9160bebdebb7620bcd050a2c53ac47a"
+  },
+  "doc-12a02e7c5542a186e871c85b0e8c51ee": {
+    "entity_names": [
+      "Help Center",
+      "Article 73232",
+      "Shopee",
+      "Co.id",
+      "Portal"
+    ],
+    "count": 5,
+    "create_time": 1756079060,
+    "update_time": 1756079060,
+    "_id": "doc-12a02e7c5542a186e871c85b0e8c51ee"
+  },
+  "doc-f7072ccac255096414cda6b387e78569": {
+    "entity_names": [
+      "Badminton",
+      "Ioniq 80 HBRX-2U182",
+      "Tipe Pemain",
+      "Level Pemain",
+      "Victor Thruster",
+      "Yonex Racket",
+      "Dunlop Nitro Star FS-1100",
+      "Racket",
+      "GoBIG",
+      "Pegangan",
+      "Raket"
+    ],
+    "count": 11,
+    "create_time": 1756079402,
+    "update_time": 1756079402,
+    "_id": "doc-f7072ccac255096414cda6b387e78569"
+  },
+  "doc-8c5682795af3bcca83a6d63686f5bbb0": {
+    "entity_names": [
+      "anggaran",
+      "Anda",
+      "Badminton Insight",
+      "Tokyo",
+      "World Badminton Championship",
+      "Rasa Senar",
+      "Pengalaman Bermain Badminton",
+      "Angkis",
+      "preferensi pribadi",
+      "Yonex Aerobite",
+      "Senar Bulu Tangkis",
+      "gaya bermain",
+      "Senar Senar",
+      "Tahanan Badminton Insight"
+    ],
+    "count": 14,
+    "create_time": 1756079879,
+    "update_time": 1756079879,
+    "_id": "doc-8c5682795af3bcca83a6d63686f5bbb0"
+  },
+  "doc-f87d0a73e8c385f1c07308d6f9348b8c": {
+    "entity_names": [
+      "Pembeli",
+      "Barang",
+      "Kelompok Media, Musik & Buku",
+      "Amplifier Bass",
+      "Buku",
+      "Kelompok Fashion",
+      "Lazada",
+      "Gitar Bass Elektrik",
+      "Kamera",
+      "Pusat Bantuan Lazada",
+      "\"Kualitas\">",
+      "Drone",
+      "URL",
+      "onik",
+      "Musik"
+    ],
+    "count": 15,
+    "create_time": 1756080163,
+    "update_time": 1756080163,
+    "_id": "doc-f87d0a73e8c385f1c07308d6f9348b8c"
+  },
+  "doc-575d9de6bdd2b7ae88666cafa160bda1": {
+    "entity_names": [
+      "Tokyo",
+      "R&D Department",
+      "VICTOR",
+      "HSUAN CHI, YANG",
+      "pemain.",
+      "VBS-70, VBS-69N, VBS-68P, VBS-66N, VBS-63",
+      "Raket."
+    ],
+    "count": 7,
+    "create_time": 1756080163,
+    "update_time": 1756080163,
+    "_id": "doc-575d9de6bdd2b7ae88666cafa160bda1"
+  },
+  "doc-65fa5835d893d947df58f95ea856a4d0": {
+    "entity_names": [
+      "Komplain",
+      "Pembeli",
+      "Shopee",
+      "Prinsip Dasar",
+      "Keputihan"
+    ],
+    "count": 5,
+    "create_time": 1756080600,
+    "update_time": 1756080600,
+    "_id": "doc-65fa5835d893d947df58f95ea856a4d0"
+  },
+  "doc-4a64afb169d09e152dbc0804bcdfdccb": {
+    "entity_names": [
+      "Toko GoBIG",
+      "Kasir (Cashier)",
+      "Standard Operating Procedure (SOP)",
+      "Toko (Store)",
+      "Pembayaran Langsung (Direct Payment)"
+    ],
+    "count": 5,
+    "create_time": 1756080912,
+    "update_time": 1756080912,
+    "_id": "doc-4a64afb169d09e152dbc0804bcdfdccb"
+  },
+  "doc-b783b064d9d85c7ad172739503dffdc5": {
+    "entity_names": [
+      "Karyawan",
+      "Prosedur 1-8",
+      "SOP",
+      "Standard Operating Procedure (SOP)",
+      "Live Social Media",
+      "Tujuan"
+    ],
+    "count": 6,
+    "create_time": 1756080913,
+    "update_time": 1756080913,
+    "_id": "doc-b783b064d9d85c7ad172739503dffdc5"
+  },
+  "doc-3d5e0d6cac5363dc3ee70ddd216a4da8": {
+    "entity_names": [
+      "Pramuniaga\"<|\"The SOP Melayani Pelanggan is implemented by a Pramuniaga to ensure excellent customer service at Toko GoBIG.",
+      "Toko GoBIG",
+      "SOP Melayani Pelanggan",
+      "SOP Melayani Pelanggan\"<|\"Toko GoBIG implements the SOP Melayani Pelanggan to ensure excellent customer service.",
+      "Pramuniaga"
+    ],
+    "count": 5,
+    "create_time": 1756081294,
+    "update_time": 1756081294,
+    "_id": "doc-3d5e0d6cac5363dc3ee70ddd216a4da8"
+  },
+  "doc-b64db0442976f1075e8f4696b86aceb0": {
+    "entity_names": [
+      "Prosedur Operasional Standard",
+      "SOP"
+    ],
+    "count": 2,
+    "create_time": 1756081718,
+    "update_time": 1756081718,
+    "_id": "doc-b64db0442976f1075e8f4696b86aceb0"
+  },
+  "doc-9972b46321a3b362e2fa08f2bcb59e00": {
+    "entity_names": [
+      "Admin Media Sosial",
+      "Media Sosial",
+      "Menjawab Pesan Online",
+      "Fitur Chat",
+      "SOP Rekomendasi Produk",
+      "Pelanggan",
+      "Tujuan"
+    ],
+    "count": 7,
+    "create_time": 1756081721,
+    "update_time": 1756081721,
+    "_id": "doc-9972b46321a3b362e2fa08f2bcb59e00"
+  },
+  "doc-be940213166cc1b00b51d68e438e8029": {
+    "entity_names": [
+      "Point of Sales (POS)",
+      "Data",
+      "Kasir",
+      "MOKA POS",
+      "Standard Operating Procedure (SOP)"
+    ],
+    "count": 5,
+    "create_time": 1756082106,
+    "update_time": 1756082106,
+    "_id": "doc-be940213166cc1b00b51d68e438e8029"
+  },
+  "doc-554543bb4d7671067eb64a9f5c350512": {
+    "entity_names": [
+      "Cakupan Dokumen",
+      "Peran Karyawan",
+      "Barang atau layanan",
+      "Standard Operating Procedure (SOP)",
+      "Pelanggan toko",
+      "Rekomendasi Produk",
+      "Tujuan"
+    ],
+    "count": 7,
+    "create_time": 1756082111,
+    "update_time": 1756082111,
+    "_id": "doc-554543bb4d7671067eb64a9f5c350512"
+  },
+  "doc-6458609c7ade63855939bfcffcf4c5c2": {
+    "entity_names": [
+      "Tiktok-Tokopedia\", \"Shopee\", \"Lazada",
+      "Return Policy",
+      "pelanggan",
+      "stok",
+      "pembayaran",
+      "GoBIG Customer",
+      "SOP",
+      "tidak",
+      "toko",
+      "harga",
+      "barang",
+      "GoBIG",
+      "GoBIG uses these e-commerce platforms to provide services such as refunds and returns.",
+      "produk",
+      "Admin Sosial Media"
+    ],
+    "count": 15,
+    "create_time": 1756082942,
+    "update_time": 1756082942,
+    "_id": "doc-6458609c7ade63855939bfcffcf4c5c2"
+  },
+  "doc-e17c6e956b3f17a0a354f1f960cb5d98": {
+    "entity_names": [
+      "Tokyo Shop, Shopee, Lazada, TikTok Shop, MOKA POS",
+      "Admin Online",
+      "SOP Templates",
+      "Product Categories ",
+      "Standard Operating Procedure (SOP)",
+      "Product Data ",
+      "Platform",
+      "Product",
+      "GoBig, New Arrival, Sepatu Badminton Power Ace Hundred"
+    ],
+    "count": 9,
+    "create_time": 1756082947,
+    "update_time": 1756082947,
+    "_id": "doc-e17c6e956b3f17a0a354f1f960cb5d98"
+  },
+  "doc-ef2aa32ad3724904149308ab77fe9f27": {
+    "entity_names": [
+      "Cara Pengembalian",
+      "TikTok Shop",
+      "Barang",
+      "Tanggal Pengembalian",
+      "Penjual",
+      "Syarat",
+      "Harga"
+    ],
+    "count": 7,
+    "create_time": 1756083756,
+    "update_time": 1756083756,
+    "_id": "doc-ef2aa32ad3724904149308ab77fe9f27"
+  },
+  "doc-d07ba6ccc6698206c132137d29169d5a": {
+    "entity_names": [
+      "Pelanggaran",
+      "Pembeli",
+      "Pengguna",
+      "Penjual",
+      "Pelanggaran Chat Shopee",
+      "Shopee",
+      "Peraturan\"<|\"Pelanggaran is a violation of Peraturan, as it goes against the rules and guidelines set by Shopee."
+    ],
+    "count": 7,
+    "create_time": 1756083813,
+    "update_time": 1756083813,
+    "_id": "doc-d07ba6ccc6698206c132137d29169d5a"
+  },
+  "doc-24e0e662421abd1b880bb4a14852b11b": {
+    "entity_names": [
+      "Cara Retur Barang",
+      "Shopee Inspirasi",
+      "Penulis",
+      "Pengertian Retur Barang\"<|\"Shopee offers the process of returning or exchanging products as part of its services.",
+      "Pengertian Retur Barang\"<|\"The guide on how to return or exchange products is related to the concept of product returns and exchanges on Shopee.",
+      "Shopee",
+      "Situs",
+      "Rien Reka",
+      "Return Policy\"<|\"Shopee provides the return policy as part of its services to customers.",
+      "Exchange Option\"<|\"Shopee offers the exchange option as a feature for customers to exchange products."
+    ],
+    "count": 10,
+    "create_time": 1756084457,
+    "update_time": 1756084457,
+    "_id": "doc-24e0e662421abd1b880bb4a14852b11b"
+  },
+  "doc-882cd65845326096bc851e29980f70be": {
+    "entity_names": [
+      "\"Teknologi 'Wave' pada Insole",
+      "\"Dukungan Pergelangan Kaki Bagian Dalam (Ankle Support)",
+      "Bentuk Kaki",
+      "\"Outsole (Sol Luar)",
+      "Kualitas dan Harga",
+      "Non-Marking Sole",
+      "\"Heel Cap (Penahan Tumit)",
+      "Eagle.co.id",
+      "Ukuran Sepatu",
+      "Panduan Sepatu Bulu Tangkis",
+      "\"Peredam Kejut (Cushion)",
+      "Situs Web SKOR.id",
+      "Nurul Ika",
+      "https://www.skor.id/post/tips-memilih-sepatu-bulu-tangkis-yang-tepat",
+      "Situs Web",
+      "Sepatu Bulu Tangkis yang Tepat"
+    ],
+    "count": 16,
+    "create_time": 1756085086,
+    "update_time": 1756085086,
+    "_id": "doc-882cd65845326096bc851e29980f70be"
+  },
+  "doc-81b69b87cd29aea32450da7ec58a315f": {
+    "entity_names": [
+      "Pengembalian",
+      "sangat",
+      "di",
+      "pilih",
+      "halaman",
+      "kualitas",
+      "saya",
+      "terima",
+      "Ajukan",
+      "Rincian",
+      "Pesanan",
+      "produk",
+      "Mengapa"
+    ],
+    "count": 13,
+    "create_time": 1756085086,
+    "update_time": 1756085086,
+    "_id": "doc-81b69b87cd29aea32450da7ec58a315f"
+  },
+  "doc-e3481adfe0293247a8e9ab532f04d880": {
+    "entity_names": [
+      "Kasir/Pramuniaga",
+      "Refund",
+      "Toko GoBIG",
+      "MOKA POS",
+      "Transaksi Pembelian",
+      "Retur",
+      "Pembatalan Transaksi",
+      "Penjualan"
+    ],
+    "count": 8,
+    "create_time": 1756085986,
+    "update_time": 1756085986,
+    "_id": "doc-e3481adfe0293247a8e9ab532f04d880"
+  },
+  "doc-9cd7c5ebc20430f3228e6cf6e9f75b34": {
+    "entity_names": [
+      "Sepatu Badminton",
+      "Panduan Sepatu Badminton"
+    ],
+    "count": 2,
+    "create_time": 1756085988,
+    "update_time": 1756085988,
+    "_id": "doc-9cd7c5ebc20430f3228e6cf6e9f75b34"
+  },
+  "doc-5e6b0ca56bf8be787ee0c78d21e45303": {
+    "entity_names": [
+      "/faq\"",
+      "Customer Service",
+      "Pengembalian Dana",
+      "FAQ",
+      "Lazada",
+      "Permintaan Pengembalian Dana",
+      "\"Product Return\"<|\"Lazada memberikan kemudahan untuk pengguna dalam mengajukan permintaan pengembalian dana dan menyelesaikan masalah pelanggan dengan baik.\")",
+      "\"Request Process\"<|\"Proses pengembalian produk memerlukan tahapan yang harus diambil oleh pembeli untuk mengajukan permintaan pengembalian dana.\")",
+      "s",
+      "Co.ID",
+      "Product Return",
+      "Knowledge"
+    ],
+    "count": 12,
+    "create_time": 1756087398,
+    "update_time": 1756087398,
+    "_id": "doc-5e6b0ca56bf8be787ee0c78d21e45303"
+  },
+  "doc-a7edb39768a92ece1e492856d255251c": {
+    "entity_names": [
+      "Toko GoBIG",
+      "Karyawan Pemasang Senar",
+      "SOP Penggunaan Mesin Pemasang Senar",
+      "Pengguna Layanan Pasang Senar",
+      "SOP",
+      "Grip Baru",
+      "Pengaturan Tarikan Pada Mesin",
+      "Layanan Pasang Senar",
+      "Shuttlecock",
+      "Pelanggan",
+      "Aktivitas Pemasangan Senar Raket"
+    ],
+    "count": 11,
+    "create_time": 1756087504,
+    "update_time": 1756087504,
+    "_id": "doc-a7edb39768a92ece1e492856d255251c"
+  },
+  "doc-9bf58ab9eadc884530dd93b6f46c69a6": {
+    "entity_names": [
+      "Li-Ning",
+      "InfinityPro",
+      "Jutaan",
+      "Li-Ning Hundred",
+      "Raze JR 1000",
+      "GoBig",
+      "GoBIG",
+      "Badminton Li-Ning",
+      "Sepatu Badminton Li-Ning",
+      "RazeJR",
+      "Hundred",
+      "Raze",
+      "Eagle",
+      "BeastArmor",
+      "Ribu",
+      "HUNDRED",
+      "Teknologi Canggih Li-Ning",
+      "World Athletics Championship",
+      "Sepatu Badminton",
+      "InfinityComfort",
+      "Bantalan Responsif Li-Ning"
+    ],
+    "count": 21,
+    "create_time": 1756092708,
+    "update_time": 1756092708,
+    "_id": "doc-9bf58ab9eadc884530dd93b6f46c69a6"
+  }
+}
