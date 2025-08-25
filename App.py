@@ -111,7 +111,7 @@ class Chatbot:
     def login(self):
         col1, col2, col3, col4, col5 = st.columns((1, 2, 1, 2, 1))
         with col3:
-            st.image("F:\AA\last\container\wave.png", width=100)
+            st.image("wave.png", width=100)
         st.info("Mari berkenalan dengan Alma!")
         with st.form("login_form"):
             name = st.text_input("Nama Anda", placeholder="Masukkan nama Anda")
@@ -373,3 +373,4 @@ if __name__ == "__main__":
         model=DEFAULT_MODEL
     )
     alma.run_ui()
+
