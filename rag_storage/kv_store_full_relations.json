@@ -1,0 +1,3390 @@
+{
+  "doc-4a64afb169d09e152dbc0804bcdfdccb": {
+    "relation_pairs": [
+      [
+        "SOP (Layanan Pembayaran)",
+        "Transaksi Pembayaran"
+      ],
+      [
+        "Kasir",
+        "SOP (Layanan Pembayaran)"
+      ],
+      [
+        "Transaksi Pembayaran",
+        "Uang"
+      ],
+      [
+        "SOP (Layanan Pembayaran)",
+        "Toko GoBIG"
+      ],
+      [
+        "Kasir",
+        "Pelanggan"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1756103521,
+    "update_time": 1756103521,
+    "_id": "doc-4a64afb169d09e152dbc0804bcdfdccb"
+  },
+  "doc-be940213166cc1b00b51d68e438e8029": {
+    "relation_pairs": [
+      [
+        "MOKA POS",
+        "Peran"
+      ],
+      [
+        "MOKA POS",
+        "Tujuan"
+      ],
+      [
+        "Kasir",
+        "MOKA POS"
+      ],
+      [
+        "Peran",
+        "Tujuan"
+      ],
+      [
+        "Cakupan",
+        "Tujuan"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1756104314,
+    "update_time": 1756104314,
+    "_id": "doc-be940213166cc1b00b51d68e438e8029"
+  },
+  "doc-e3481adfe0293247a8e9ab532f04d880": {
+    "relation_pairs": [
+      [
+        "Dokumentasi",
+        "Kasir"
+      ],
+      [
+        "Jenis Transaksi",
+        "Toko GoBIG"
+      ]
+    ],
+    "count": 2,
+    "create_time": 1756104320,
+    "update_time": 1756104320,
+    "_id": "doc-e3481adfe0293247a8e9ab532f04d880"
+  },
+  "doc-4e30c2e44d15578dfc4283b88438a49c": {
+    "relation_pairs": [
+      [
+        "Koleksi Produk",
+        "Toko GoBIG"
+      ],
+      [
+        "Instruktur Pemasang",
+        "Senar Pemasang"
+      ],
+      [
+        "Lokasi Lantai 1",
+        "Toko GoBIG"
+      ],
+      [
+        "Lokasi Lantai 1",
+        "Senar Pemasang"
+      ],
+      [
+        "Layanan Pelanggan",
+        "Pramuniaga"
+      ],
+      [
+        "Kasir",
+        "Pramuniaga"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1756105064,
+    "update_time": 1756105064,
+    "_id": "doc-4e30c2e44d15578dfc4283b88438a49c"
+  },
+  "doc-554543bb4d7671067eb64a9f5c350512": {
+    "relation_pairs": [
+      [
+        "Pelanggan",
+        "Toko"
+      ],
+      [
+        "Karyawan Sales Host Live Media Sosial Admin Media Sosial Pemasang Pasang Senar",
+        "SOP"
+      ],
+      [
+        "Pelanggan",
+        "Proses Penjualan"
+      ],
+      [
+        "Karyawan Sales Host Live Media Sosial Admin Media Sosial Pemasang Pasang Senar",
+        "Layanan Pelanggan"
+      ],
+      [
+        "Rekomendasi Produk Tujuan",
+        "SOP"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1756105639,
+    "update_time": 1756105639,
+    "_id": "doc-554543bb4d7671067eb64a9f5c350512"
+  },
+  "doc-6458609c7ade63855939bfcffcf4c5c2": {
+    "relation_pairs": [
+      [
+        "Pelanggan",
+        "Toko"
+      ],
+      [
+        "Keadaan",
+        "Produk"
+      ],
+      [
+        "Barang",
+        "Kondisi"
+      ],
+      [
+        "Dalam",
+        "Kondisi"
+      ],
+      [
+        "Barang",
+        "Pelanggan"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1756105738,
+    "update_time": 1756105738,
+    "_id": "doc-6458609c7ade63855939bfcffcf4c5c2"
+  },
+  "doc-e17c6e956b3f17a0a354f1f960cb5d98": {
+    "relation_pairs": [
+      [
+        "Platform",
+        "Standard Operating Procedure (SOP)"
+      ],
+      [
+        "Admin Online",
+        "Product Information"
+      ],
+      [
+        "Admin Online",
+        "Standard Operating Procedure (SOP)"
+      ],
+      [
+        "Admin Online",
+        "Product Data"
+      ],
+      [
+        "Standard Operating Procedure (SOP)",
+        "Upload"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1756105813,
+    "update_time": 1756105813,
+    "_id": "doc-e17c6e956b3f17a0a354f1f960cb5d98"
+  },
+  "doc-a7edb39768a92ece1e492856d255251c": {
+    "relation_pairs": [
+      [
+        "Layanan Pasang Senar",
+        "Toko GoBIG Karyawan"
+      ],
+      [
+        "Pelanggan",
+        "Pemasang Senar Raket"
+      ],
+      [
+        "Mesin Cetak Logo",
+        "Pemasang Senar Raket"
+      ],
+      [
+        "Raket Badminton",
+        "Senar Raket"
+      ],
+      [
+        "Layanan Pasang Senar",
+        "Toko GoBIG"
+      ],
+      [
+        "Karyawan Pemasang Senar",
+        "Layanan Pasang Senar"
+      ],
+      [
+        "Aktivitas Pemasangan Senar Raket",
+        "Pemasang Senar Raket"
+      ]
+    ],
+    "count": 7,
+    "create_time": 1756106957,
+    "update_time": 1756106957,
+    "_id": "doc-a7edb39768a92ece1e492856d255251c"
+  },
+  "doc-9972b46321a3b362e2fa08f2bcb59e00": {
+    "relation_pairs": [
+      [
+        "Menjawab",
+        "SOP"
+      ],
+      [
+        "Menjawab",
+        "Pesan Online"
+      ],
+      [
+        "Media Sosial",
+        "Menjawab"
+      ],
+      [
+        "Pesan Online",
+        "Tujuan"
+      ],
+      [
+        "Rekomendasi Produk",
+        "Tujuan"
+      ]
+    ],
+    "count": 5,
+    "create_time": 1756107121,
+    "update_time": 1756107121,
+    "_id": "doc-9972b46321a3b362e2fa08f2bcb59e00"
+  },
+  "doc-b783b064d9d85c7ad172739503dffdc5": {
+    "relation_pairs": [
+      [
+        "Host Live",
+        "Pelanggan Online"
+      ],
+      [
+        "Host Live",
+        "SOP"
+      ],
+      [
+        "Host Live",
+        "Live Social Media"
+      ]
+    ],
+    "count": 3,
+    "create_time": 1756107768,
+    "update_time": 1756107768,
+    "_id": "doc-b783b064d9d85c7ad172739503dffdc5"
+  },
+  "doc-b64db0442976f1075e8f4696b86aceb0": {
+    "relation_pairs": [
+      [
+        "Gunting Senar",
+        "Senar"
+      ],
+      [
+        "Gunting Senar",
+        "Raket"
+      ],
+      [
+        "Pemakaian Raket",
+        "Raket"
+      ],
+      [
+        "Pemakaian Raket",
+        "Penarikan Senar"
+      ],
+      [
+        "Alat Penarik Senar",
+        "Karyawan"
+      ],
+      [
+        "Apabila",
+        "Karyawan"
+      ]
+    ],
+    "count": 6,
+    "create_time": 1756107773,
+    "update_time": 1756107773,
+    "_id": "doc-b64db0442976f1075e8f4696b86aceb0"
+  },
+  "doc-b9160bebdebb7620bcd050a2c53ac47a": {
+    "relation_pairs": [
+      [
+        "Gaya Defense",
+        "Tarikan Senar 27 lbs atau lebih"
+      ],
+      [
+        "Bulu Tangkis",
+        "Kok"
+      ],
+      [
+        "Keakuratan",
+        "Tarikan Senar 27 lbs atau lebih"
+      ],
+      [
+        "Dropshot",
+        "Gaya Offense"
+      ],
+      [
+        "Bulu Tangkis",
+        "Tarikan Senar 16–22 lbs"
+      ],
+      [
+        "Control String",
+        "Senar Raket Badminton"
+      ],
+      [
+        "Gaya Offense",
+        "Smash"
+      ],
+      [
+        "Kontrol Bola",
+        "Tarikan Senar 27 lbs atau lebih"
+      ],
+      [
+        "Kok",
+        "Senar Raket Badminton"
+      ],
+      [
+        "Durability String",
+        "Senar Raket Badminton"
+      ],
+      [
+        "Power String",
+        "Senar Raket Badminton"
+      ],
+      [
+        "Kok",
+        "Raket Badminton"
+      ],
+      [
+        "Pemain Level Menengah",
+        "Tarikan Senar 23–26 lbs"
+      ],
+      [
+        "Senar Raket Badminton",
+        "my-best.com"
+      ],
+      [
+        "Pemula Badminton",
+        "Tarikan Senar Raket Badminton"
+      ],
+      [
+        "Control String",
+        "Pemain Ganda Posisi Depan"
+      ],
+      [
+        "Kok",
+        "Tarikan Senar Raket Badminton"
+      ],
+      [
+        "Pemain Tunggal Penyerang",
+        "Power String"
+      ],
+      [
+        "Durability String",
+        "Pemula Badminton"
+      ],
+      [
+        "Sweet Spot",
+        "Tarikan Senar 16–22 lbs"
+      ],
+      [
+        "Kontrol Bola",
+        "Tarikan Senar 23–26 lbs"
+      ],
+      [
+        "Keakuratan",
+        "Tarikan Senar 23–26 lbs"
+      ],
+      [
+        "Raket Badminton",
+        "Senar Raket Badminton"
+      ],
+      [
+        "Gaya Defense",
+        "Serangan Balik"
+      ],
+      [
+        "Control String",
+        "Pemain Tunggal (Fokus Kontrol)"
+      ],
+      [
+        "Gaya Offense",
+        "Tarikan Senar 23–26 lbs"
+      ],
+      [
+        "Control String",
+        "Kok"
+      ],
+      [
+        "Pemain Profesional",
+        "Tarikan Senar 27 lbs atau lebih"
+      ],
+      [
+        "Durability String",
+        "Kok"
+      ],
+      [
+        "Bulu Tangkis",
+        "Tarikan Senar 27 lbs atau lebih"
+      ],
+      [
+        "Bulu Tangkis",
+        "Tarikan Senar Raket Badminton"
+      ],
+      [
+        "Kok",
+        "Power String"
+      ],
+      [
+        "Bulu Tangkis",
+        "Raket Badminton"
+      ],
+      [
+        "Pukulan Kuat",
+        "Tarikan Senar 16–22 lbs"
+      ],
+      [
+        "Pemain Ganda Bagian Belakang",
+        "Power String"
+      ],
+      [
+        "Gaya Defense",
+        "Menguras Energi Lawan"
+      ],
+      [
+        "Pemain Pemula",
+        "Tarikan Senar 16–22 lbs"
+      ],
+      [
+        "Bulu Tangkis",
+        "Tarikan Senar 23–26 lbs"
+      ]
+    ],
+    "count": 38,
+    "create_time": 1756569578,
+    "update_time": 1756569578,
+    "_id": "doc-b9160bebdebb7620bcd050a2c53ac47a"
+  },
+  "doc-882cd65845326096bc851e29980f70be": {
+    "relation_pairs": [
+      [
+        "Bulu Tangkis",
+        "Non-Marking Sole"
+      ],
+      [
+        "Eagle.co.id",
+        "SKOR.id"
+      ],
+      [
+        "Bulu Tangkis",
+        "Ukuran Sepatu"
+      ],
+      [
+        "SKOR.id",
+        "tips memilih sepatu bulu tangkis yang tepat"
+      ],
+      [
+        "Peredam Kejut (Cushion)",
+        "Teknologi \"Wave\""
+      ],
+      [
+        "Bulu Tangkis",
+        "Peredam Kejut (Cushion)"
+      ],
+      [
+        "Bulu Tangkis",
+        "Fleksibilitas Sepatu"
+      ],
+      [
+        "Bulu Tangkis",
+        "Material Sepatu"
+      ],
+      [
+        "Bulu Tangkis",
+        "Dukungan Pergelangan Kaki Bagian Dalam (Ankle Support)"
+      ],
+      [
+        "Bulu Tangkis",
+        "Kualitas dan Harga Sepatu"
+      ],
+      [
+        "Bulu Tangkis",
+        "Heel Cap (Penahan Tumit)"
+      ],
+      [
+        "Nurul Ika",
+        "SKOR.id"
+      ],
+      [
+        "Berat Sepatu",
+        "Bulu Tangkis"
+      ],
+      [
+        "Bentuk Kaki",
+        "Bulu Tangkis"
+      ],
+      [
+        "Bulu Tangkis",
+        "Outsole (Sol Luar)"
+      ]
+    ],
+    "count": 15,
+    "create_time": 1756569716,
+    "update_time": 1756569716,
+    "_id": "doc-882cd65845326096bc851e29980f70be"
+  },
+  "doc-81b69b87cd29aea32450da7ec58a315f": {
+    "relation_pairs": [
+      [
+        "Asisten AI Chat",
+        "Penjual"
+      ],
+      [
+        "Mengurangi Pengembalian Barang dan Dana",
+        "Persentase Chat Dibalas"
+      ],
+      [
+        "kami",
+        "produk"
+      ],
+      [
+        "Pemesanan",
+        "Respons Chat yang Tepat"
+      ],
+      [
+        "Asisten AI Chat",
+        "FAQ"
+      ],
+      [
+        "Penjual",
+        "Shopee"
+      ],
+      [
+        "Dukungan Pasca-penjualan",
+        "Penjual"
+      ],
+      [
+        "pelanggan",
+        "produk"
+      ],
+      [
+        "Membangun Loyalitas Pembeli",
+        "Persentase Chat Dibalas"
+      ],
+      [
+        "Dukungan Pasca-penjualan",
+        "FAQ"
+      ],
+      [
+        "Loyalitas Pembeli",
+        "Penjual"
+      ],
+      [
+        "Pembeli",
+        "Penjual"
+      ],
+      [
+        "Dukungan Pra-penjualan",
+        "Penjual"
+      ],
+      [
+        "Meningkatkan Penjualan",
+        "Persentase Chat Dibalas"
+      ],
+      [
+        "kami",
+        "pelanggan"
+      ],
+      [
+        "Dukungan Pra-penjualan",
+        "FAQ"
+      ],
+      [
+        "Penjual",
+        "Persentase Chat Dibalas"
+      ],
+      [
+        "Pengembalian Barang dan Dana",
+        "Penjual"
+      ],
+      [
+        "Keputusan Pembelian",
+        "Respons Chat yang Tepat"
+      ],
+      [
+        "Penjual",
+        "Penjualan"
+      ]
+    ],
+    "count": 20,
+    "create_time": 1756569718,
+    "update_time": 1756569718,
+    "_id": "doc-81b69b87cd29aea32450da7ec58a315f"
+  },
+  "doc-5e6b0ca56bf8be787ee0c78d21e45303": {
+    "relation_pairs": [
+      [
+        "Detail Pesanan",
+        "Pesanan Saya"
+      ],
+      [
+        "Retur",
+        "Retur & Pembatalan"
+      ],
+      [
+        "Pembeli",
+        "Pengembalian Dana"
+      ],
+      [
+        "Lazada",
+        "Penjual"
+      ],
+      [
+        "Pengembalian Dana",
+        "Produk Lazmall"
+      ],
+      [
+        "Lazada Saldo",
+        "Pengembalian Dana"
+      ],
+      [
+        "Agen",
+        "Penjual"
+      ],
+      [
+        "co.id",
+        "faq"
+      ],
+      [
+        "Akun",
+        "Pesanan Saya"
+      ],
+      [
+        "Debit Online",
+        "Pengembalian Dana"
+      ],
+      [
+        "Pengembalian Dana",
+        "Produk Non-Lazmall"
+      ],
+      [
+        "Lazada",
+        "Pengembalian Dana"
+      ],
+      [
+        "Aplikasi Lazada",
+        "Pembeli"
+      ],
+      [
+        "Agen",
+        "Pengembalian Dana"
+      ],
+      [
+        "faq",
+        "knowledge"
+      ],
+      [
+        "Akun",
+        "Retur & Pembatalan"
+      ],
+      [
+        "Email",
+        "Pengembalian Dana"
+      ],
+      [
+        "Notifikasi",
+        "Pengembalian Dana"
+      ],
+      [
+        "Akun",
+        "Aplikasi Lazada"
+      ],
+      [
+        "Lazada",
+        "Pusat Bantuan Lazada"
+      ]
+    ],
+    "count": 20,
+    "create_time": 1756569845,
+    "update_time": 1756569845,
+    "_id": "doc-5e6b0ca56bf8be787ee0c78d21e45303"
+  },
+  "doc-12a02e7c5542a186e871c85b0e8c51ee": {
+    "relation_pairs": [
+      [
+        "Layanan Pelanggan Shopee",
+        "Pusat Bantuan Shopee"
+      ],
+      [
+        "Paket Tidak Sampai",
+        "Pembeli"
+      ],
+      [
+        "Paket Tidak Sampai",
+        "Pengajuan Pengembalian Dana"
+      ],
+      [
+        "Penjual",
+        "Shopee Mall"
+      ],
+      [
+        "Menerima Produk dalam Kondisi Berbeda",
+        "Tim Shopee"
+      ],
+      [
+        "Pembeli",
+        "Shopee"
+      ],
+      [
+        "Menerima Produk dalam Kondisi Berbeda",
+        "Penjual"
+      ],
+      [
+        "Produk Tidak Lengkap atau Kosong",
+        "Tim Shopee"
+      ],
+      [
+        "Menerima Produk dalam Kondisi Berbeda",
+        "Pengajuan Pengembalian Produk"
+      ],
+      [
+        "Paket Tidak Sampai",
+        "Penjual"
+      ],
+      [
+        "Paket Tidak Sampai",
+        "Tim Shopee"
+      ],
+      [
+        "Pusat Bantuan Shopee",
+        "Shopee"
+      ],
+      [
+        "Layanan Pelanggan Shopee",
+        "Live Chat"
+      ],
+      [
+        "Pengajuan Pengembalian Dana",
+        "Tim Shopee"
+      ],
+      [
+        "Pusat Bantuan Shopee",
+        "https://help.shopee.co.id/portal/4/article/73232"
+      ],
+      [
+        "Pembeli",
+        "Pengajuan Pengembalian Dana"
+      ],
+      [
+        "Shopee",
+        "Shopee Mall"
+      ],
+      [
+        "Shopee Mall",
+        "Tim Shopee"
+      ],
+      [
+        "Layanan Pelanggan Shopee",
+        "Telepon"
+      ],
+      [
+        "Pengajuan Pengembalian Dana",
+        "Produk Tidak Lengkap atau Kosong"
+      ],
+      [
+        "Email",
+        "Layanan Pelanggan Shopee"
+      ],
+      [
+        "Pembeli",
+        "Penjual"
+      ],
+      [
+        "Artikel 73232",
+        "Pusat Bantuan Shopee"
+      ],
+      [
+        "Pembeli",
+        "Pengajuan Pengembalian Produk"
+      ],
+      [
+        "Penjual",
+        "Produk Tidak Lengkap atau Kosong"
+      ],
+      [
+        "Pengajuan Pengembalian Produk",
+        "Tim Shopee"
+      ],
+      [
+        "Menerima Produk dalam Kondisi Berbeda",
+        "Pembeli"
+      ],
+      [
+        "Penjual",
+        "Shopee"
+      ],
+      [
+        "Artikel 73232",
+        "Layanan Pelanggan Shopee"
+      ],
+      [
+        "Shopee",
+        "Tim Shopee"
+      ],
+      [
+        "Pembeli",
+        "Produk Tidak Lengkap atau Kosong"
+      ]
+    ],
+    "count": 31,
+    "create_time": 1756569846,
+    "update_time": 1756569846,
+    "_id": "doc-12a02e7c5542a186e871c85b0e8c51ee"
+  },
+  "doc-8c5682795af3bcca83a6d63686f5bbb0": {
+    "relation_pairs": [
+      [
+        "BG80",
+        "Senar Bulu Tangkis"
+      ],
+      [
+        "BG80",
+        "BG80 Power"
+      ],
+      [
+        "Gaya bermain",
+        "Senar tipis"
+      ],
+      [
+        "Preferensi pribadi",
+        "Senar tipis"
+      ],
+      [
+        "Anggaran",
+        "Senar tebal"
+      ],
+      [
+        "Senar tebal",
+        "Tenaga"
+      ],
+      [
+        "BG80 Power",
+        "Senar Bulu Tangkis"
+      ],
+      [
+        "BG80",
+        "Yonex"
+      ],
+      [
+        "Aerobite",
+        "Senar Bulu Tangkis Hibrida"
+      ],
+      [
+        "Daya tahan",
+        "Senar tebal"
+      ],
+      [
+        "Aerobite",
+        "Senar Bulu Tangkis"
+      ],
+      [
+        "Senar Bulu Tangkis",
+        "Senar Bulu Tangkis Hibrida"
+      ],
+      [
+        "Gaya bermain",
+        "Senar tebal"
+      ],
+      [
+        "Kepercayaan diri",
+        "Preferensi pribadi"
+      ],
+      [
+        "Preferensi pribadi",
+        "Senar tebal"
+      ],
+      [
+        "Kontrol",
+        "Senar tipis"
+      ],
+      [
+        "Senar tipis",
+        "Tolakan"
+      ],
+      [
+        "BG80 Power",
+        "Yonex"
+      ],
+      [
+        "Rasa",
+        "Senar tipis"
+      ],
+      [
+        "Pemain mahir",
+        "Senar tipis"
+      ],
+      [
+        "Pemain tingkat menengah/pemula",
+        "Senar tebal"
+      ],
+      [
+        "Aerobite",
+        "Yonex"
+      ]
+    ],
+    "count": 22,
+    "create_time": 1756569881,
+    "update_time": 1756569881,
+    "_id": "doc-8c5682795af3bcca83a6d63686f5bbb0"
+  },
+  "doc-f87d0a73e8c385f1c07308d6f9348b8c": {
+    "relation_pairs": [
+      [
+        "Amplifier Bass",
+        "Media, Musik & Buku"
+      ],
+      [
+        "Lazada",
+        "Pembeli"
+      ],
+      [
+        "Lazada",
+        "Utilitas Digital"
+      ],
+      [
+        "LazMall",
+        "Lazada"
+      ],
+      [
+        "Fashion",
+        "Olahraga & Outdoor"
+      ],
+      [
+        "Lazada",
+        "Penjual"
+      ],
+      [
+        "Bola",
+        "Olahraga & Outdoor"
+      ],
+      [
+        "Elektronik",
+        "Lazada"
+      ],
+      [
+        "Alat Dapur",
+        "Lazada"
+      ],
+      [
+        "Pusat Bantuan Lazada",
+        "https://sellercenter.lazada.co.id/helpcenter/s/faq/knowledge"
+      ],
+      [
+        "Olahraga & Outdoor",
+        "Raket Squash"
+      ],
+      [
+        "Lazada",
+        "Mainan Anak"
+      ],
+      [
+        "Furniture & Organisasi",
+        "Lazada"
+      ],
+      [
+        "Grocery",
+        "Lazada"
+      ],
+      [
+        "Lazada",
+        "Persediaan Hewan Peliharaan"
+      ],
+      [
+        "Drone & Kamera",
+        "onik"
+      ],
+      [
+        "Pembeli",
+        "Penjual"
+      ],
+      [
+        "Gitar Bass Elektrik",
+        "Media, Musik & Buku"
+      ],
+      [
+        "Fashion",
+        "Lazada"
+      ],
+      [
+        "Alat & Perbaikan Rumah",
+        "Lazada"
+      ],
+      [
+        "Olahraga & Outdoor",
+        "Stik Golf"
+      ],
+      [
+        "FMCG",
+        "Lazada"
+      ],
+      [
+        "Lazada",
+        "Produk Digital"
+      ],
+      [
+        "Chippers",
+        "Olahraga & Outdoor"
+      ],
+      [
+        "Lazada",
+        "Otomotif"
+      ],
+      [
+        "Lazada",
+        "Media, Musik & Buku"
+      ],
+      [
+        "LazMall",
+        "Non-LazMall"
+      ],
+      [
+        "Lazada",
+        "Pusat Bantuan Lazada"
+      ]
+    ],
+    "count": 28,
+    "create_time": 1756569944,
+    "update_time": 1756569944,
+    "_id": "doc-f87d0a73e8c385f1c07308d6f9348b8c"
+  },
+  "doc-f7072ccac255096414cda6b387e78569": {
+    "relation_pairs": [
+      [
+        "Hundred",
+        "Nano Neo 7000"
+      ],
+      [
+        "Flypower",
+        "Tornado 900"
+      ],
+      [
+        "Felet",
+        "GoBIG"
+      ],
+      [
+        "Lining",
+        "Windstorm 79"
+      ],
+      [
+        "Lining",
+        "Windstorm 76"
+      ],
+      [
+        "China",
+        "Lining"
+      ],
+      [
+        "Eagle",
+        "Indonesia"
+      ],
+      [
+        "Blast Attack",
+        "Hundred"
+      ],
+      [
+        "Hundred",
+        "Rock R9"
+      ],
+      [
+        "3D Calibar X Drive",
+        "Lining"
+      ],
+      [
+        "Felet",
+        "TJ 1000 Control"
+      ],
+      [
+        "Raket Badminton Yonex Nanoray 10 F",
+        "Yonex"
+      ],
+      [
+        "Atomic - X35 SPD",
+        "Hundred"
+      ],
+      [
+        "Mizuno",
+        "Raket Badminton"
+      ],
+      [
+        "Raket Badminton",
+        "Yonex"
+      ],
+      [
+        "Hundred",
+        "T-Fusion 300 (4U)"
+      ],
+      [
+        "Flypower",
+        "Ternate 2"
+      ],
+      [
+        "Flypower",
+        "Samiya"
+      ],
+      [
+        "Flypower",
+        "Nusantara 0.2"
+      ],
+      [
+        "Flypower",
+        "Tornado 900N"
+      ],
+      [
+        "Raket Badminton Thruster Falcon Victor",
+        "Victor"
+      ],
+      [
+        "Dunlop",
+        "Raket Badminton Dunlop Nitro Star FS-1100"
+      ],
+      [
+        "Arc Saber",
+        "Yonex"
+      ],
+      [
+        "Astrox Clear",
+        "Yonex"
+      ],
+      [
+        "Astrox 01",
+        "Yonex"
+      ],
+      [
+        "Felet",
+        "Super Light SL 500"
+      ],
+      [
+        "Flypower",
+        "GoBIG"
+      ],
+      [
+        "Felet",
+        "Raket Badminton"
+      ],
+      [
+        "GoBIG",
+        "Yonex"
+      ],
+      [
+        "Astrox",
+        "Yonex"
+      ],
+      [
+        "Hundred",
+        "Optimus 901"
+      ],
+      [
+        "Lining",
+        "Windstorm 72"
+      ],
+      [
+        "Hundred",
+        "Raket Badminton"
+      ],
+      [
+        "Lining",
+        "Windstorm 78"
+      ],
+      [
+        "Lining",
+        "Raket Badminton"
+      ],
+      [
+        "Cult 79",
+        "Hundred"
+      ],
+      [
+        "Nanoray 10 F",
+        "Yonex"
+      ],
+      [
+        "Ioniq",
+        "Raket Badminton"
+      ],
+      [
+        "Lining",
+        "Windstorm 73"
+      ],
+      [
+        "GoBIG",
+        "Mizuno"
+      ],
+      [
+        "GoBIG",
+        "Phoenix"
+      ],
+      [
+        "Dunlop",
+        "Raket Badminton"
+      ],
+      [
+        "Hundred",
+        "Raket Badminton TFusion300"
+      ],
+      [
+        "Raket Badminton",
+        "Victor"
+      ],
+      [
+        "Lining",
+        "Super Lite Max 10"
+      ],
+      [
+        "GoBIG",
+        "Vegeto"
+      ],
+      [
+        "Flypower",
+        "Garuda 08"
+      ],
+      [
+        "Lining",
+        "Windstorm 75"
+      ],
+      [
+        "Flypower",
+        "Raket Badminton"
+      ],
+      [
+        "Acro X",
+        "Eagle"
+      ],
+      [
+        "Flypower",
+        "Rio Gold G2"
+      ],
+      [
+        "Felet",
+        "Woven TJ Power"
+      ],
+      [
+        "3D Calibar 300 Drive",
+        "Lining"
+      ],
+      [
+        "Flypower",
+        "Indonesia"
+      ],
+      [
+        "Arc Saber Light",
+        "Yonex"
+      ],
+      [
+        "Ioniq",
+        "Raket Badmionton Ioniq 80 HBRX-2U182"
+      ],
+      [
+        "Cult 82",
+        "Hundred"
+      ],
+      [
+        "Astrox 88D Play",
+        "Yonex"
+      ],
+      [
+        "Atomic Air 78",
+        "Hundred"
+      ],
+      [
+        "Hundred",
+        "Thunderbolt 78"
+      ],
+      [
+        "Flypower",
+        "Tornado 800"
+      ],
+      [
+        "Flypower",
+        "Rio Gold C1"
+      ],
+      [
+        "Aura Speed SNP",
+        "Victor"
+      ],
+      [
+        "Jet Speed S 800HT",
+        "Victor"
+      ],
+      [
+        "Eagle",
+        "Evo X"
+      ],
+      [
+        "Flypower",
+        "Nusantara 2.3"
+      ],
+      [
+        "Hundred",
+        "T-Fusion 300 (5U)"
+      ],
+      [
+        "Flypower",
+        "Power Fusion"
+      ],
+      [
+        "GoBIG",
+        "Lining"
+      ],
+      [
+        "Lining",
+        "Super Lite Max 9"
+      ],
+      [
+        "Eagle",
+        "GoBIG"
+      ],
+      [
+        "Eagle",
+        "Raket Badminton"
+      ],
+      [
+        "Taiwan",
+        "Victor"
+      ],
+      [
+        "Hundred",
+        "X-Saber 7"
+      ],
+      [
+        "Flypower",
+        "Macan"
+      ],
+      [
+        "GoBIG",
+        "Raket Badminton"
+      ],
+      [
+        "Lining",
+        "Turbo Charging Z Drive"
+      ],
+      [
+        "Nano Ray",
+        "Yonex"
+      ],
+      [
+        "Flypower",
+        "Rio Gold C2"
+      ],
+      [
+        "Hundred",
+        "Hundred Badminton Racket Atomic-X 38"
+      ],
+      [
+        "Acro Max",
+        "Eagle"
+      ],
+      [
+        "Abhinaya",
+        "Flypower"
+      ],
+      [
+        "Nanoray DX",
+        "Yonex"
+      ],
+      [
+        "GoBIG",
+        "Hundred"
+      ],
+      [
+        "Astrox 88",
+        "Yonex"
+      ],
+      [
+        "Felet",
+        "Malaysia"
+      ],
+      [
+        "Glory 2024",
+        "Hundred"
+      ],
+      [
+        "Balakosa",
+        "Flypower"
+      ],
+      [
+        "GoBIG",
+        "Victor"
+      ],
+      [
+        "Drivex 888H",
+        "Victor"
+      ]
+    ],
+    "count": 90,
+    "create_time": 1756569975,
+    "update_time": 1756569975,
+    "_id": "doc-f7072ccac255096414cda6b387e78569"
+  },
+  "doc-575d9de6bdd2b7ae88666cafa160bda1": {
+    "relation_pairs": [
+      [
+        "Raket Bulutangkis",
+        "VBS-63"
+      ],
+      [
+        "Raket Bulutangkis",
+        "YANG HSUAN CHI"
+      ],
+      [
+        "High Resilience",
+        "VBS-63"
+      ],
+      [
+        "Raket Bulutangkis",
+        "VBS-68P"
+      ],
+      [
+        "Control",
+        "Senar Raket VICTOR"
+      ],
+      [
+        "Raket Bulutangkis",
+        "Senar Raket VICTOR"
+      ],
+      [
+        "Pemain",
+        "Senar Raket"
+      ],
+      [
+        "Raket Bulutangkis",
+        "VBS-70"
+      ],
+      [
+        "High Resilience",
+        "Senar Raket VICTOR"
+      ],
+      [
+        "Durability",
+        "VBS-69N"
+      ],
+      [
+        "Durability",
+        "VICTOR"
+      ],
+      [
+        "Kok",
+        "Senar Raket"
+      ],
+      [
+        "Pemain",
+        "Tegangan Senar Lebih dari 26 lbs"
+      ],
+      [
+        "Pemain Berorientasi Serangan",
+        "Senar Raket"
+      ],
+      [
+        "Racket R&D Department",
+        "YANG HSUAN CHI"
+      ],
+      [
+        "Pukulan Pasif",
+        "Senar Raket"
+      ],
+      [
+        "Raket Bulutangkis",
+        "VBS-66N"
+      ],
+      [
+        "High Resilience",
+        "VBS-66N"
+      ],
+      [
+        "Pemain Berorientasi Kontrol",
+        "Senar Raket"
+      ],
+      [
+        "Pemain Pemula",
+        "Senar Raket"
+      ],
+      [
+        "Pemain",
+        "Raket Tegangan Tinggi"
+      ],
+      [
+        "Durability",
+        "Senar Raket VICTOR"
+      ],
+      [
+        "Cedera Olahraga",
+        "Raket Tegangan Tinggi"
+      ],
+      [
+        "Durability",
+        "VBS-70"
+      ],
+      [
+        "Control",
+        "VICTOR"
+      ],
+      [
+        "Pemain Berorientasi Kecepatan",
+        "Senar Raket"
+      ],
+      [
+        "High Resilience",
+        "VICTOR"
+      ],
+      [
+        "Raket Bulutangkis",
+        "VBS-69N"
+      ],
+      [
+        "Pemain",
+        "Tegangan 24 lbs"
+      ],
+      [
+        "Pemain Tingkat Lanjut",
+        "Senar Raket"
+      ],
+      [
+        "Control",
+        "VBS-68P"
+      ]
+    ],
+    "count": 31,
+    "create_time": 1756569995,
+    "update_time": 1756569995,
+    "_id": "doc-575d9de6bdd2b7ae88666cafa160bda1"
+  },
+  "doc-65fa5835d893d947df58f95ea856a4d0": {
+    "relation_pairs": [
+      [
+        "Komplain Pembeli",
+        "Penjual"
+      ],
+      [
+        "Pembeli",
+        "Pengembalian Barang dan Dana"
+      ],
+      [
+        "Komplain Pembeli",
+        "Pengembalian Barang dan Dana"
+      ],
+      [
+        "Pembeli",
+        "Shopee"
+      ],
+      [
+        "Penjual",
+        "Shopee"
+      ],
+      [
+        "Pengembalian Barang dan Dana",
+        "Penjual"
+      ],
+      [
+        "Pusat Resolusi",
+        "Shopee"
+      ],
+      [
+        "Pembeli",
+        "Penjual"
+      ],
+      [
+        "Shopee",
+        "Tinjauan Shopee"
+      ]
+    ],
+    "count": 9,
+    "create_time": 1756570005,
+    "update_time": 1756570005,
+    "_id": "doc-65fa5835d893d947df58f95ea856a4d0"
+  },
+  "doc-d07ba6ccc6698206c132137d29169d5a": {
+    "relation_pairs": [
+      [
+        "Pelanggaran Chat",
+        "Poin Penalti"
+      ],
+      [
+        "Chat Broadcast",
+        "Pesan Promosi"
+      ],
+      [
+        "Kebijakan Shopee",
+        "Pelanggaran Chat"
+      ],
+      [
+        "Pelanggaran Chat",
+        "Pemblokiran Akun"
+      ],
+      [
+        "Pelanggaran Chat",
+        "Username Media Sosial"
+      ],
+      [
+        "Pelanggaran Chat",
+        "Rekening Bank"
+      ],
+      [
+        "Auto-Reply",
+        "Pesan Promosi"
+      ],
+      [
+        "Pelanggaran Chat",
+        "Shopee"
+      ],
+      [
+        "Fitur Chat Penjual",
+        "Penjual"
+      ],
+      [
+        "Nomor Telepon",
+        "Pelanggaran Chat"
+      ],
+      [
+        "Pelanggaran Chat",
+        "WhatsApp"
+      ],
+      [
+        "Customer Service Shopee",
+        "Shopee"
+      ],
+      [
+        "Pelanggaran Chat",
+        "Pengguna"
+      ],
+      [
+        "Pelanggaran Chat",
+        "Pesan Promosi"
+      ],
+      [
+        "Pembatasan Akun",
+        "Pemblokiran Akun"
+      ],
+      [
+        "Pelanggaran Chat",
+        "Pembatasan Akun"
+      ],
+      [
+        "Data Pribadi",
+        "Pelanggaran Chat"
+      ],
+      [
+        "Customer Service Shopee",
+        "Pembatasan Akun"
+      ],
+      [
+        "Pelanggaran Chat",
+        "Pesan Chat Diblokir"
+      ]
+    ],
+    "count": 19,
+    "create_time": 1756570054,
+    "update_time": 1756570054,
+    "_id": "doc-d07ba6ccc6698206c132137d29169d5a"
+  },
+  "doc-a4f2c2972eaf1cb9e6b432c8e9ac2048": {
+    "relation_pairs": [
+      [
+        "Kasir",
+        "Sistem POS"
+      ],
+      [
+        "Admin Media Sosial",
+        "Teknik Penawaran Online"
+      ],
+      [
+        "Admin Media Sosial",
+        "Toko GoBIG"
+      ],
+      [
+        "Pengetahuan Produk Dasar",
+        "Pramuniaga"
+      ],
+      [
+        "Admin Media Sosial",
+        "Pengetahuan Produk Dasar"
+      ],
+      [
+        "Admin Media Sosial",
+        "Strategi Penjualan Online"
+      ],
+      [
+        "Pemasang Senar",
+        "Senar"
+      ],
+      [
+        "Pramuniaga",
+        "SOP Menyambut Pelanggan"
+      ],
+      [
+        "Pengetahuan Produk Menengah",
+        "Pramuniaga"
+      ],
+      [
+        "Lining",
+        "Pramuniaga"
+      ],
+      [
+        "Pemasang Senar",
+        "Raket"
+      ],
+      [
+        "Karyawan Pemasang Senar",
+        "Penggunaan Mesin Senar"
+      ],
+      [
+        "Kasir",
+        "Media Pembayaran"
+      ],
+      [
+        "Penanganan Komplain Lanjutan",
+        "Pramuniaga"
+      ],
+      [
+        "Karyawan Pemasang Senar",
+        "Modul Pelatihan Karyawan Toko GoBIG"
+      ],
+      [
+        "Karyawan Pemasang Senar",
+        "Toko GoBIG"
+      ],
+      [
+        "Kasir",
+        "Pemasang Senar"
+      ],
+      [
+        "Admin Media Sosial",
+        "SOP Chat Penjual"
+      ],
+      [
+        "Admin Media Sosial",
+        "Pengelolaan Produk Dasar"
+      ],
+      [
+        "Pramuniaga",
+        "Teknik Rekomendasi Produk"
+      ],
+      [
+        "Karyawan Pemasang Senar",
+        "Pengetahuan Produk Dasar (Pemasang Senar)"
+      ],
+      [
+        "Mesin Pemasang Senar",
+        "Pemasang Senar"
+      ],
+      [
+        "Kasir",
+        "Pelanggan"
+      ],
+      [
+        "Pramuniaga",
+        "Yonex"
+      ],
+      [
+        "MOKA POS",
+        "Pramuniaga"
+      ],
+      [
+        "Pramuniaga",
+        "SOP Layanan Refund"
+      ],
+      [
+        "Penjualan Solutif",
+        "Pramuniaga"
+      ],
+      [
+        "Host Live",
+        "Pemasang Senar"
+      ],
+      [
+        "Admin Media Sosial",
+        "SOP Retur Online"
+      ],
+      [
+        "Admin Media Sosial",
+        "Kebijakan Pelanggaran Chat"
+      ],
+      [
+        "Pengetahuan Produk Mendalam",
+        "Pramuniaga"
+      ],
+      [
+        "Pelanggan",
+        "Pemasang Senar"
+      ],
+      [
+        "Modul Pelatihan Karyawan Toko GoBIG",
+        "Pramuniaga"
+      ],
+      [
+        "Karyawan Pemasang Senar",
+        "Penanganan Masalah Umum"
+      ],
+      [
+        "Pramuniaga",
+        "SOP Lokasi Produk"
+      ],
+      [
+        "Admin Media Sosial",
+        "Penanganan Chat Kompleks"
+      ],
+      [
+        "Host Live",
+        "SOP Live Sosial Media"
+      ],
+      [
+        "Host Live",
+        "Platform Live"
+      ],
+      [
+        "Admin Media Sosial",
+        "Manajemen Komplain Online"
+      ],
+      [
+        "Host Live",
+        "Pelanggan"
+      ],
+      [
+        "Karyawan Pemasang Senar",
+        "SOP Pemasangan Senar"
+      ],
+      [
+        "Host Live",
+        "Kasir"
+      ],
+      [
+        "Pramuniaga",
+        "Teknik Penawaran Produk"
+      ],
+      [
+        "Pengecekan Stok",
+        "Pramuniaga"
+      ],
+      [
+        "Admin Media Sosial",
+        "Modul Pelatihan Karyawan Toko GoBIG"
+      ],
+      [
+        "Pramuniaga",
+        "Toko GoBIG"
+      ],
+      [
+        "Hundred",
+        "Pramuniaga"
+      ]
+    ],
+    "count": 47,
+    "create_time": 1756570077,
+    "update_time": 1756570077,
+    "_id": "doc-a4f2c2972eaf1cb9e6b432c8e9ac2048"
+  },
+  "doc-24e0e662421abd1b880bb4a14852b11b": {
+    "relation_pairs": [
+      [
+        "Garansi Bebas Pengembalian",
+        "Shopee"
+      ],
+      [
+        "Retur Barang",
+        "Shopee"
+      ],
+      [
+        "Retur Barang",
+        "Situs Shopee"
+      ],
+      [
+        "Aplikasi Shopee",
+        "Retur Barang"
+      ],
+      [
+        "Garansi Tepat Waktu",
+        "Shopee"
+      ],
+      [
+        "Inspirasi Shopee",
+        "Rien Reka"
+      ],
+      [
+        "Layanan Pelanggan",
+        "Shopee"
+      ],
+      [
+        "Garansi Tepat Waktu",
+        "Voucher Garansi Tepat Waktu"
+      ],
+      [
+        "Inspirasi Shopee",
+        "Shopee"
+      ]
+    ],
+    "count": 9,
+    "create_time": 1756570081,
+    "update_time": 1756570081,
+    "_id": "doc-24e0e662421abd1b880bb4a14852b11b"
+  },
+  "doc-ef2aa32ad3724904149308ab77fe9f27": {
+    "relation_pairs": [
+      [
+        "Pengembalian Barang",
+        "TikTok Shop"
+      ],
+      [
+        "Pengembalian Dana (Refund)",
+        "TikTok Shop"
+      ],
+      [
+        "Nomor Rekening",
+        "Pengembalian Dana (Refund)"
+      ],
+      [
+        "Aplikasi TikTok",
+        "Pengembalian Dana (Refund)"
+      ],
+      [
+        "Nomor Rekening",
+        "Pembeli"
+      ],
+      [
+        "Barang",
+        "Pembeli"
+      ],
+      [
+        "Biteship",
+        "TikTok Shop"
+      ],
+      [
+        "Barang",
+        "Penjual"
+      ],
+      [
+        "Barang",
+        "Pengembalian Barang"
+      ],
+      [
+        "Aplikasi TikTok",
+        "Pengembalian Barang"
+      ],
+      [
+        "Pembeli",
+        "Penjual"
+      ]
+    ],
+    "count": 11,
+    "create_time": 1756570108,
+    "update_time": 1756570108,
+    "_id": "doc-ef2aa32ad3724904149308ab77fe9f27"
+  },
+  "doc-aa89a169bd624ee1528df5c9fadebc8c": {
+    "relation_pairs": [
+      [
+        "Fitur Chat Penjual",
+        "Pembeli"
+      ],
+      [
+        "Informasi tentang pembayaran/metode transaksi",
+        "Pembeli"
+      ],
+      [
+        "Penjual",
+        "Prioritas Respons Chat"
+      ],
+      [
+        "Pembeli",
+        "Penawaran harga atau promosi"
+      ],
+      [
+        "Informasi seputar pengiriman pesanan",
+        "Pembeli"
+      ],
+      [
+        "Ketentuan toko",
+        "Pembeli"
+      ],
+      [
+        "Fitur Chat Penjual",
+        "Shopee"
+      ],
+      [
+        "Komplain terkait produk",
+        "Pembeli"
+      ],
+      [
+        "Kualitas Chat",
+        "Penjual"
+      ],
+      [
+        "Informasi produk",
+        "Pembeli"
+      ],
+      [
+        "Kualitas Chat",
+        "Prioritas Respons Chat"
+      ],
+      [
+        "Pembeli",
+        "Penjual"
+      ],
+      [
+        "Pengalaman Pelanggan (Customer Experience)",
+        "Penjual"
+      ]
+    ],
+    "count": 13,
+    "create_time": 1756570154,
+    "update_time": 1756570154,
+    "_id": "doc-aa89a169bd624ee1528df5c9fadebc8c"
+  },
+  "doc-9cd7c5ebc20430f3228e6cf6e9f75b34": {
+    "relation_pairs": [
+      [
+        "Pemain",
+        "Sepatu"
+      ],
+      [
+        "Standard 2.5",
+        "VICTOR"
+      ],
+      [
+        "Footwear Development Department",
+        "Johan"
+      ],
+      [
+        "Diana",
+        "Footwear Development Department"
+      ],
+      [
+        "Standard 2.5",
+        "Wide 3.0"
+      ],
+      [
+        "Square Toe Wide 3.5",
+        "VICTOR"
+      ],
+      [
+        "Diana",
+        "TIGA TIPS MEMILIH SEPATU BADMINTON YANG TEPAT"
+      ],
+      [
+        "Kaus Kaki",
+        "Sepatu"
+      ],
+      [
+        "U-SHAPE",
+        "VICTOR"
+      ],
+      [
+        "Square Toe Wide 3.5",
+        "Wide 3.0"
+      ],
+      [
+        "Slim 2.0",
+        "VICTOR"
+      ],
+      [
+        "Johan",
+        "TIGA TIPS MEMILIH SEPATU BADMINTON YANG TEPAT"
+      ],
+      [
+        "Slim 2.0",
+        "Standard 2.5"
+      ],
+      [
+        "Footwear Development Department",
+        "Renee"
+      ],
+      [
+        "V-SHAPE",
+        "VICTOR"
+      ],
+      [
+        "Renee",
+        "TIGA TIPS MEMILIH SEPATU BADMINTON YANG TEPAT"
+      ],
+      [
+        "Bulu Tangkis",
+        "VICTOR"
+      ],
+      [
+        "VICTOR",
+        "Wide 3.0"
+      ],
+      [
+        "U-SHAPE",
+        "V-SHAPE"
+      ]
+    ],
+    "count": 19,
+    "create_time": 1756570215,
+    "update_time": 1756570215,
+    "_id": "doc-9cd7c5ebc20430f3228e6cf6e9f75b34"
+  },
+  "doc-330e77509447b7dcf47cd7bbf4b1230b": {
+    "relation_pairs": [
+      [
+        "Navy/Silver",
+        "SagaLite7"
+      ],
+      [
+        "Tokyo4",
+        "sockliner TruShape"
+      ],
+      [
+        "Desain Stylish",
+        "Li-Ning"
+      ],
+      [
+        "LN Midsole",
+        "RangerLiteZ1"
+      ],
+      [
+        "ACTIVE GRIP",
+        "Beast_II"
+      ],
+      [
+        "Raze",
+        "Synthetic Leather"
+      ],
+      [
+        "Power Cushion",
+        "Yonex"
+      ],
+      [
+        "RangerLiteZ1",
+        "White/Turkish"
+      ],
+      [
+        "Pemain Profesional",
+        "Seri Turbo"
+      ],
+      [
+        "A230",
+        "Black/Red"
+      ],
+      [
+        "Skill2",
+        "trucushion sockliner"
+      ],
+      [
+        "Atlas",
+        "comfort flex action"
+      ],
+      [
+        "MESH",
+        "UltraFly"
+      ],
+      [
+        "Power Cushion",
+        "SHB Eclipsion X"
+      ],
+      [
+        "RUBBER OUTSOLE",
+        "UltraFly"
+      ],
+      [
+        "Beast_II",
+        "SUPPORT PLATE"
+      ],
+      [
+        "Red/Black",
+        "SagaLite8"
+      ],
+      [
+        "Li-Ning (China) Sports Goods Co. Ltd.",
+        "RangerLiteSE"
+      ],
+      [
+        "Russel Mesh",
+        "Sirkulasi Udara Optimal"
+      ],
+      [
+        "Hundred",
+        "Outsole non-marking"
+      ],
+      [
+        "Raze",
+        "Rubber Outsole"
+      ],
+      [
+        "Beast_II",
+        "Rubber Outsole"
+      ],
+      [
+        "Aerus Z Wide",
+        "Yonex"
+      ],
+      [
+        "Hundred",
+        "Sol luar berdesain 2+2 dengan bantalan X"
+      ],
+      [
+        "Li-Ning (China) Sports Goods Co. Ltd.",
+        "SagaLite7"
+      ],
+      [
+        "Ranger",
+        "Sepatu Anti-Penanda"
+      ],
+      [
+        "Li-Ning Saga Lite 8",
+        "SagaLite8"
+      ],
+      [
+        "RangerLiteZ1",
+        "hitam"
+      ],
+      [
+        "AkayuSuper7",
+        "Yonex"
+      ],
+      [
+        "Pemain Pemula atau Menengah",
+        "Seri Saga"
+      ],
+      [
+        "Tokyo 4",
+        "Yonex"
+      ],
+      [
+        "SHB Eclipsion X",
+        "Toe Assist Shape"
+      ],
+      [
+        "Li-Ning",
+        "Raze"
+      ],
+      [
+        "AE2Gold",
+        "Tru Shape"
+      ],
+      [
+        "Pemain Badminton",
+        "Skill2"
+      ],
+      [
+        "Non Marking Sole",
+        "Skill2"
+      ],
+      [
+        "Double Russel Mesh",
+        "Jaring Raschel Ganda"
+      ],
+      [
+        "Gerakan Kaki Halus",
+        "Round Sole"
+      ],
+      [
+        "Navy/Gold",
+        "SagaLite8"
+      ],
+      [
+        "BeastPro",
+        "TPU"
+      ],
+      [
+        "950000",
+        "RangerLiteSE"
+      ],
+      [
+        "NavyOrange",
+        "Ultramax"
+      ],
+      [
+        "A230",
+        "Brilliant/Blue"
+      ],
+      [
+        "Li-Ning",
+        "Tips Memilih Sepatu"
+      ],
+      [
+        "BeastArmor",
+        "silica gel"
+      ],
+      [
+        "550000",
+        "SagaLite8"
+      ],
+      [
+        "45",
+        "SagaLite8"
+      ],
+      [
+        "Tokyo",
+        "Yonex"
+      ],
+      [
+        "Kaki Lebar",
+        "Power Cushion Aerus Z Wide"
+      ],
+      [
+        "43",
+        "SagaLite8"
+      ],
+      [
+        "GateSkyPlus3",
+        "Mizuno"
+      ],
+      [
+        "Li-Ning (China) Sports Goods Co. Ltd.",
+        "Tenis Meja"
+      ],
+      [
+        "Eagle",
+        "Triumph"
+      ],
+      [
+        "RangerLiteZ1",
+        "Teknologi Cushioning"
+      ],
+      [
+        "Li-Ning",
+        "Ultra_IV"
+      ],
+      [
+        "Li-Ning",
+        "UltraFly"
+      ],
+      [
+        "BeastPro",
+        "Mesh"
+      ],
+      [
+        "Kaki Lebar",
+        "Power Cushion Strider Flow Wide"
+      ],
+      [
+        "Cushion Insole",
+        "Tokyo4"
+      ],
+      [
+        "Li-Ning",
+        "Seri Turbo"
+      ],
+      [
+        "Menyerap Benturan",
+        "Power Cushion"
+      ],
+      [
+        "Power Cushion Strider Flow Wide",
+        "Yonex"
+      ],
+      [
+        "Atlas",
+        "Double Russel Mesh"
+      ],
+      [
+        "Beast_II",
+        "Synthetic Leather"
+      ],
+      [
+        "M",
+        "SagaLite7"
+      ],
+      [
+        "46",
+        "SagaLite8"
+      ],
+      [
+        "Akayu",
+        "TruShape"
+      ],
+      [
+        "Beast_II",
+        "HUNDRED BEAST ARMOR"
+      ],
+      [
+        "Atlas",
+        "Pemain Badminton"
+      ],
+      [
+        "Dominant2",
+        "TruShape"
+      ],
+      [
+        "GoBIG",
+        "Sepatu Badminton"
+      ],
+      [
+        "InfinityComfort",
+        "TPU"
+      ],
+      [
+        "Li-Ning",
+        "Turbo"
+      ],
+      [
+        "Hexagrip Sole",
+        "Skill2"
+      ],
+      [
+        "Beast Max",
+        "Hundred"
+      ],
+      [
+        "Aerus Z Wide",
+        "Kaki Lebar"
+      ],
+      [
+        "Li-Ning (China) Sports Goods Co. Ltd.",
+        "RangerLiteZ1"
+      ],
+      [
+        "Hypersonic",
+        "Li-Ning (China) Sports Goods Co. Ltd."
+      ],
+      [
+        "Mach",
+        "Yonex"
+      ],
+      [
+        "Hundred",
+        "InfinityPro"
+      ],
+      [
+        "Cara Merawat Sepatu Li-Ning",
+        "Li-Ning"
+      ],
+      [
+        "Dominant2",
+        "Sintetis"
+      ],
+      [
+        "GoBIG",
+        "Yonex"
+      ],
+      [
+        "Flypower",
+        "GoBIG"
+      ],
+      [
+        "Profesional",
+        "RangerLiteZ1"
+      ],
+      [
+        "Eagle",
+        "GoBIG"
+      ],
+      [
+        "Lining",
+        "Toko GoBIG"
+      ],
+      [
+        "Double Russel Mesh",
+        "Tokyo3"
+      ],
+      [
+        "Atlas",
+        "TruShape"
+      ],
+      [
+        "Eagle",
+        "Sepatu Badminton"
+      ],
+      [
+        "Tokyo3",
+        "Tokyo4"
+      ],
+      [
+        "Mizuno",
+        "Toko GoBIG"
+      ],
+      [
+        "Tokyo3",
+        "insole Tru Cushion"
+      ],
+      [
+        "Antarctica",
+        "RangerLiteZ1"
+      ],
+      [
+        "43",
+        "SagaLite7"
+      ],
+      [
+        "Synthetic Fiber",
+        "Yonex"
+      ],
+      [
+        "Li-Ning",
+        "RazeJR"
+      ],
+      [
+        "Li-Ning Ultra",
+        "UltraForce"
+      ],
+      [
+        "Toko GoBIG",
+        "Vegeto"
+      ],
+      [
+        "ACTIVE GRIP",
+        "BeastPro"
+      ],
+      [
+        "InfinityComfort",
+        "Mesh"
+      ],
+      [
+        "ACTIVE GRIP",
+        "Raze"
+      ],
+      [
+        "44",
+        "RangerLiteZ1"
+      ],
+      [
+        "BeastArmor",
+        "lap basah"
+      ],
+      [
+        "Cascade Drive",
+        "Yonex"
+      ],
+      [
+        "RangerLiteSE",
+        "cengkeraman"
+      ],
+      [
+        "Blaze",
+        "Yonex"
+      ],
+      [
+        "Lunge",
+        "Pemain Agresif"
+      ],
+      [
+        "Li-Ning",
+        "UltraForce"
+      ],
+      [
+        "Dominant2",
+        "E.V.A."
+      ],
+      [
+        "Tokyo3",
+        "lembaran TPU"
+      ],
+      [
+        "RangerLiteZ1",
+        "White/Navy"
+      ],
+      [
+        "46",
+        "SagaLite7"
+      ],
+      [
+        "Eagle",
+        "PNR_Superblast"
+      ],
+      [
+        "Smash",
+        "White/Green"
+      ],
+      [
+        "Synchro-Fit Insole",
+        "Yonex"
+      ],
+      [
+        "Flypower",
+        "Kalasan6"
+      ],
+      [
+        "Cascade Accel",
+        "Toe Assist Shape"
+      ],
+      [
+        "BeastPro",
+        "X-CUSHION"
+      ],
+      [
+        "GateSkyPlus3",
+        "White"
+      ],
+      [
+        "535000",
+        "SagaLite7"
+      ],
+      [
+        "GoBIG",
+        "Mizuno"
+      ],
+      [
+        "39",
+        "SagaLite8"
+      ],
+      [
+        "SagaLite8",
+        "TPU"
+      ],
+      [
+        "42",
+        "RangerLiteZ1"
+      ],
+      [
+        "HUNDRED BEAST ARMOR",
+        "HUNDRED BLAST"
+      ],
+      [
+        "Li-Ning",
+        "Teknologi Canggih"
+      ],
+      [
+        "GoBIG",
+        "Phoenix"
+      ],
+      [
+        "Strider Flow Wide",
+        "Yonex"
+      ],
+      [
+        "Flypower",
+        "Losari6"
+      ],
+      [
+        "AE2Gold",
+        "Jaring Russel Ganda"
+      ],
+      [
+        "LN Midsole",
+        "SagaLite7"
+      ],
+      [
+        "Smash",
+        "Vegeto"
+      ],
+      [
+        "BeastMax",
+        "Front wide fit"
+      ],
+      [
+        "BeastPro",
+        "Phylon Midsole"
+      ],
+      [
+        "Flypower",
+        "RioGoldC2"
+      ],
+      [
+        "Toko GoBIG",
+        "Victor"
+      ],
+      [
+        "BeastArmor",
+        "Hundred"
+      ],
+      [
+        "Mizuno",
+        "SkyBlaster3"
+      ],
+      [
+        "TruShape",
+        "Yonex"
+      ],
+      [
+        "Li-Ning",
+        "Seri Saga"
+      ],
+      [
+        "Hundred",
+        "Kulit sintetis"
+      ],
+      [
+        "Raze",
+        "TPU"
+      ],
+      [
+        "AeroSpeed",
+        "Li-Ning"
+      ],
+      [
+        "Busa Cushion",
+        "Li-Ning"
+      ],
+      [
+        "Li-Ning (China) Sports Goods Co. Ltd.",
+        "RRC"
+      ],
+      [
+        "Midsole Phylon",
+        "Tokyo3"
+      ],
+      [
+        "Hundred",
+        "Toko GoBIG"
+      ],
+      [
+        "Black/White",
+        "GateSkyPlus3"
+      ],
+      [
+        "Hundred",
+        "X-Cushion"
+      ],
+      [
+        "GoBIG",
+        "Vegeto"
+      ],
+      [
+        "Li-Ning",
+        "Ultra Speed"
+      ],
+      [
+        "45",
+        "RangerLiteZ1"
+      ],
+      [
+        "Raze",
+        "X-CUSHION"
+      ],
+      [
+        "39",
+        "RangerLiteSE"
+      ],
+      [
+        "HexaFoam Pro",
+        "Hundred"
+      ],
+      [
+        "Power Cushion SHB 65 Z4",
+        "Yonex"
+      ],
+      [
+        "AeroFly",
+        "Li-Ning"
+      ],
+      [
+        "Hundred",
+        "Jala berlapis-lapis"
+      ],
+      [
+        "AE2Gold",
+        "Tru Cushion"
+      ],
+      [
+        "Atlas",
+        "bantalan ekstra"
+      ],
+      [
+        "HUNDRED BEAST ARMOR",
+        "InfinityComfort"
+      ],
+      [
+        "InfinityComfort",
+        "X-CUSHION"
+      ],
+      [
+        "Tokyo3",
+        "sockliner TruShape"
+      ],
+      [
+        "ACTIVE GRIP",
+        "InfinityComfort"
+      ],
+      [
+        "LN Midsole",
+        "SagaLite8"
+      ],
+      [
+        "BeastPro",
+        "Synthetic Leather"
+      ],
+      [
+        "Mesh",
+        "Raze"
+      ],
+      [
+        "40",
+        "RangerLiteZ1"
+      ],
+      [
+        "Li-Ning",
+        "Ultramax"
+      ],
+      [
+        "Pemain Agresif",
+        "Synthetic Fiber"
+      ],
+      [
+        "Kaki Lebar",
+        "Strider Flow Wide"
+      ],
+      [
+        "BeastMax",
+        "HUNDRED BEAST ARMOR"
+      ],
+      [
+        "Beast_II",
+        "Mesh"
+      ],
+      [
+        "Energy20",
+        "Li-Ning"
+      ],
+      [
+        "Badminton",
+        "Li-Ning (China) Sports Goods Co. Ltd."
+      ],
+      [
+        "Beijing",
+        "Li-Ning (China) Sports Goods Co. Ltd."
+      ],
+      [
+        "Double Russel Mesh",
+        "Skill2"
+      ],
+      [
+        "BeastPro",
+        "SUPPORT PLATE"
+      ],
+      [
+        "Badminton",
+        "RangerLiteSE"
+      ],
+      [
+        "Li-Ning",
+        "Saga"
+      ],
+      [
+        "Stabilitas Maksimal",
+        "Synthetic Fiber"
+      ],
+      [
+        "Kenyamanan",
+        "Li-Ning"
+      ],
+      [
+        "Lunge",
+        "Toe Assist Shape"
+      ],
+      [
+        "BeastArmor",
+        "HUNDRED BEAST ARMOR"
+      ],
+      [
+        "InfinityComfort",
+        "Phylon Midsole"
+      ],
+      [
+        "Li-Ning",
+        "SagaLite8"
+      ],
+      [
+        "750000",
+        "RangerLiteZ1"
+      ],
+      [
+        "Power Cushion Aerus Z",
+        "Yonex"
+      ],
+      [
+        "Dominant2",
+        "Pemain Badminton"
+      ],
+      [
+        "BeastPro",
+        "Rubber Outsole"
+      ],
+      [
+        "Dominant2",
+        "Tru Cushion"
+      ],
+      [
+        "Durable Skin Light",
+        "Yonex"
+      ],
+      [
+        "Skill2",
+        "bantalan ekstra"
+      ],
+      [
+        "Li-Ning",
+        "SagaLite9"
+      ],
+      [
+        "BeastMax",
+        "material breathable"
+      ],
+      [
+        "Russel Mesh",
+        "Yonex"
+      ],
+      [
+        "GoBig",
+        "HUNDRED BEAST ARMOR"
+      ],
+      [
+        "Toe Assist Shape",
+        "Yonex"
+      ],
+      [
+        "Bantalan Ekstra",
+        "Tokyo3"
+      ],
+      [
+        "Blaze3",
+        "Pemain Badminton"
+      ],
+      [
+        "320 gram",
+        "RangerLiteZ1"
+      ],
+      [
+        "Double Russel Mesh",
+        "Yonex"
+      ],
+      [
+        "SagaLite7",
+        "White/Gold"
+      ],
+      [
+        "Aerus Z",
+        "Yonex"
+      ],
+      [
+        "Energy20",
+        "Pemain Profesional"
+      ],
+      [
+        "Hypersonic",
+        "TPU"
+      ],
+      [
+        "Akayu",
+        "TruCushion"
+      ],
+      [
+        "Keamanan Kaki",
+        "Yonex"
+      ],
+      [
+        "Skill2",
+        "TruShape"
+      ],
+      [
+        "Hypersonic",
+        "mesh"
+      ],
+      [
+        "Dominant2",
+        "P.U.Leather"
+      ],
+      [
+        "3D Power Graphite Sheet",
+        "Yonex"
+      ],
+      [
+        "Footwork Cepat",
+        "Russel Mesh"
+      ],
+      [
+        "GoBIG",
+        "Lining"
+      ],
+      [
+        "Phylon Midsole",
+        "Raze"
+      ],
+      [
+        "InfinityComfort",
+        "Synthetic Leather"
+      ],
+      [
+        "RangerLiteSE",
+        "lapisan atas bersirkulasi udara"
+      ],
+      [
+        "RangerLiteZ1",
+        "orange"
+      ],
+      [
+        "AE2Gold",
+        "Karet Alami"
+      ],
+      [
+        "Eagle",
+        "Radiant"
+      ],
+      [
+        "Raze",
+        "SUPPORT PLATE"
+      ],
+      [
+        "Li-Ning (China) Sports Goods Co. Ltd.",
+        "Ranger"
+      ],
+      [
+        "SYNTHETIC LEATHER",
+        "UltraFly"
+      ],
+      [
+        "Cascade Accel",
+        "Power Cushion"
+      ],
+      [
+        "A230",
+        "Victor"
+      ],
+      [
+        "Dominant2",
+        "Karet NON-MARKING Tidak Berlilin"
+      ],
+      [
+        "Pemain Badminton",
+        "Tokyo3"
+      ],
+      [
+        "SagaLite7",
+        "TPU"
+      ],
+      [
+        "Hypersonic",
+        "Li-Ning"
+      ],
+      [
+        "Black/Gold",
+        "RangerLiteZ1"
+      ],
+      [
+        "Flypower",
+        "Toko GoBIG"
+      ],
+      [
+        "Beast_II",
+        "TPU"
+      ],
+      [
+        "InfinityComfort",
+        "SUPPORT PLATE"
+      ],
+      [
+        "Galaxy",
+        "Hundred"
+      ],
+      [
+        "Power Cushion Comfort Z3",
+        "Yonex"
+      ],
+      [
+        "Sol Hexagrip",
+        "Tokyo3"
+      ],
+      [
+        "Phoenix",
+        "Toko GoBIG"
+      ],
+      [
+        "Arma Force",
+        "TruShape"
+      ],
+      [
+        "Menengah",
+        "RangerLiteSE"
+      ],
+      [
+        "RangerLiteSE",
+        "Std/Wht/Blk"
+      ],
+      [
+        "42",
+        "SagaLite8"
+      ],
+      [
+        "InfinityComfort",
+        "Rubber Outsole"
+      ],
+      [
+        "Lateral Shell",
+        "Skill2"
+      ],
+      [
+        "Round Sole",
+        "Yonex"
+      ],
+      [
+        "Cushion",
+        "UltraForce"
+      ],
+      [
+        "BeastArmor",
+        "baking soda"
+      ],
+      [
+        "Strider Flow",
+        "Yonex"
+      ],
+      [
+        "PHYLON MIDSOLE",
+        "UltraFly"
+      ],
+      [
+        "Beast_II",
+        "X-CUSHION"
+      ],
+      [
+        "Dominant2",
+        "Polyester Mesh"
+      ],
+      [
+        "CommandoX",
+        "Eagle"
+      ],
+      [
+        "Hypersonic",
+        "Sepatu Anti-gores"
+      ],
+      [
+        "SkyBlaster3",
+        "WhiteBlack"
+      ],
+      [
+        "Durabilitas",
+        "Li-Ning"
+      ],
+      [
+        "Toko GoBIG",
+        "Yonex"
+      ],
+      [
+        "43",
+        "RangerLiteZ1"
+      ],
+      [
+        "Clyde",
+        "Eagle"
+      ],
+      [
+        "BeastArmor",
+        "pasta gigi"
+      ],
+      [
+        "41",
+        "SagaLite8"
+      ],
+      [
+        "Mengurangi Tekanan",
+        "Toe Assist Shape"
+      ],
+      [
+        "Performa Lapangan",
+        "Yonex"
+      ],
+      [
+        "Eagle",
+        "Hurricane"
+      ],
+      [
+        "RangerLiteSE",
+        "fusi lateral"
+      ],
+      [
+        "BeastPro",
+        "HUNDRED BEAST ARMOR"
+      ],
+      [
+        "44",
+        "SagaLite7"
+      ],
+      [
+        "Mobilitas Tinggi",
+        "Power Cushion"
+      ],
+      [
+        "Flypower",
+        "Sepatu Badminton"
+      ],
+      [
+        "Power Cushion Aerus Z Wide",
+        "Yonex"
+      ],
+      [
+        "Beast_II",
+        "Phylon Midsole"
+      ],
+      [
+        "Hundred",
+        "Raze"
+      ],
+      [
+        "Perpindahan Tenaga",
+        "Synchro-Fit Insole"
+      ],
+      [
+        "Power Cushion",
+        "Power Cushion+"
+      ],
+      [
+        "Atlas",
+        "Hexagrip Sole"
+      ],
+      [
+        "Badminton",
+        "RangerLiteZ1"
+      ],
+      [
+        "Kenyamanan",
+        "Russel Mesh"
+      ],
+      [
+        "Li-Ning (China) Sports Goods Co. Ltd.",
+        "SagaLite8"
+      ],
+      [
+        "Li-Ning (China) Sports Goods Co. Ltd.",
+        "Squash"
+      ],
+      [
+        "Li-Ning",
+        "Ukuran LiNing"
+      ],
+      [
+        "Hundred",
+        "Sepatu Badminton"
+      ],
+      [
+        "42",
+        "RangerLiteSE"
+      ],
+      [
+        "GoBIG",
+        "Hundred"
+      ],
+      [
+        "Galaxy",
+        "HUNDRED BEAST ARMOR"
+      ],
+      [
+        "Atlas",
+        "trucushion sockliner"
+      ],
+      [
+        "Tokyo4",
+        "Yonex"
+      ],
+      [
+        "Arma Force",
+        "Yonex"
+      ],
+      [
+        "TruCushion",
+        "Yonex"
+      ],
+      [
+        "Sol Hexagrip",
+        "Tokyo4"
+      ],
+      [
+        "40",
+        "SagaLite8"
+      ],
+      [
+        "Black/Neon",
+        "Smash"
+      ],
+      [
+        "Eagle",
+        "Skyline"
+      ],
+      [
+        "Eagle",
+        "Toko GoBIG"
+      ],
+      [
+        "GoBIG",
+        "Victor"
+      ],
+      [
+        "Lunge",
+        "Power Cushion"
+      ],
+      [
+        "Arma Force",
+        "TruCushion"
+      ],
+      [
+        "Li-Ning",
+        "Pilihan untuk Berbagai Kaki"
+      ]
+    ],
+    "count": 296,
+    "create_time": 1756570367,
+    "update_time": 1756570367,
+    "_id": "doc-330e77509447b7dcf47cd7bbf4b1230b"
+  },
+  "doc-51600ea4f4ac29a6bf71c0e3ecd210f1": {
+    "relation_pairs": [
+      [
+        "layanan pasang senar",
+        "mesin"
+      ],
+      [
+        "GoBIG",
+        "September 2023"
+      ],
+      [
+        "GoBIG",
+        "pakaian olahraga"
+      ],
+      [
+        "layanan pasang senar",
+        "raket badminton"
+      ],
+      [
+        "Bekasi",
+        "Harapan Indah"
+      ],
+      [
+        "GoBIG",
+        "Instagram"
+      ],
+      [
+        "GoBIG",
+        "Lazada"
+      ],
+      [
+        "GoBIG",
+        "Tokopedia"
+      ],
+      [
+        "GoBIG",
+        "Harapan Indah"
+      ],
+      [
+        "GoBIG",
+        "sepatu olahraga"
+      ],
+      [
+        "GoBIG",
+        "perlengkapan olahraga lainnya"
+      ],
+      [
+        "GoBIG",
+        "Shopee"
+      ],
+      [
+        "layanan pasang senar",
+        "raket tenis"
+      ],
+      [
+        "GoBIG",
+        "TikTok"
+      ],
+      [
+        "GoBIG",
+        "raket olahraga"
+      ],
+      [
+        "GoBIG",
+        "WhatsApp"
+      ],
+      [
+        "GoBIG",
+        "layanan pasang senar"
+      ]
+    ],
+    "count": 17,
+    "create_time": 1756609909,
+    "update_time": 1756609909,
+    "_id": "doc-51600ea4f4ac29a6bf71c0e3ecd210f1"
+  }
+}
