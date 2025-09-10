@@ -2,13 +2,13 @@ import streamlit as st
 import httpx
 
 # --- Konfigurasi Global ---
-LIGHTRAG_API_URL = "http://127.0.0.1:9621/api/chat"
-DEFAULT_MODEL = "llama3:8b"
+LIGHTRAG_API_URL = "http://localhost:9621/api/chat"
+DEFAULT_MODEL = "google/gemini-2.5-flash"
 
 # --- Kumpulan Template Prompt Simulasi ---
 # --- Kumpulan Template Prompt ---
 # BASE_PROMPT_TEXT diadaptasi dari cek.py untuk konsistensi
-BASE_PROMPT_TEXT = """Anda adalah Alma Learn, seorang pelatih pegawai yang supportif dan ramah. Anda sedang berbicara dengan '{user_name}' ({user_role}). Balas SELALU dalam Bahasa Indonesia. JANGAN PERNAH menyebutkan 'konteks'. Gunakan informasi yang diberikan untuk menjawab.
+BASE_PROMPT_TEXT = """Anda adalah Alma Learn, seorang pelatih pegawai yang supportif dan ramah. Anda sedang berbicara dengan '{user_name}' ({user_role}). Balas SELALU dalam Bahasa Indonesia. Gunakan informasi yang diberikan untuk menjawab.
 ATURAN UTAMA: Balas HANYA dalam BAHASA INDONESIA. Seluruh teks dari awal hingga akhir harus dalam Bahasa Indonesia."""
 
 # QA_INSTRUCTION_TEMPLATE dari cek.py
@@ -17,12 +17,12 @@ RIWAYAT OBROLAN SEBELUMNYA:
 ---
 {{history_text}}
 ---
-TUGASMU ADALAH MENJAWAB PERTANYAAN PENGGUNA BERDASARKAN KONTEKS YANG DIBERIKAN
+TUGASMU ADALAH MENJAWAB PERTANYAAN PENGGUNA BERDASARKAN KONTEKS YANG DIBERIKAN. CANTUMKAN SUMBER YANG DIGUNAKAN.
 """
 
 # QUIZ_GENERATION_TEMPLATE dari cek.py
 QUIZ_GENERATION_TEMPLATE = f"""{BASE_PROMPT_TEXT}
-PERAN ANDA SEKARANG ADALAH PEMBUAT KUIS. Berdasarkan topik dan konteks yang Anda terima, buatlah SATU pertanyaan kuis (esai singkat atau pilihan ganda, pilih salah satu yang paling sesuai) yang relevan untuk menguji pemahaman pengguna. Ajukan pertanyaan itu secara langsung dan jelas.
+PERAN ANDA SEKARANG ADALAH PEMBUAT KUIS. Berdasarkan topik dan konteks yang Anda terima, buatlah SATU pertanyaan kuis (esai singkat atau pilihan ganda, pilih salah satu yang paling sesuai) yang relevan untuk menguji pemahaman pengguna. Ajukan pertanyaan itu secara langsung dan jelas. Anda boleh memberikan penjelasan umum yang membantu pengguna memahami pertanyaan, tetapi jangan berikan jawabannya dalam informasi tersebut.
 """
 
 # QUIZ_EVALUATION_TEMPLATE dari cek.py
@@ -293,7 +293,7 @@ class Chatbot:
             
             # STATE 2: Simulasi sedang aktif (status == 'active')
             elif st.session_state.simulation_context['status'] == 'active':
-                with st.expander("Lihat Skenario 📝", expanded=True):
+                with st.expander("Lihat Skenario 📝", expanded=False):
                     st.warning(st.session_state.simulation_context['scenario'])
 
                 if st.button("Selesaikan & Evaluasi Simulasi"):
@@ -374,6 +374,3 @@ if __name__ == "__main__":
         model=DEFAULT_MODEL
     )
     alma.run_ui()
-
-
-
