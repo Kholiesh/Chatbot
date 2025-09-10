@@ -5,16 +5,16 @@ from lightrag import LightRAG
 from lightrag.kg.shared_storage import initialize_pipeline_status
 from lightrag.utils import EmbeddingFunc
 import numpy as np
+import os
+from pathlib import Path
 
 # --- PENGATURAN KONFIGURASI ---
-# Ambil kunci API dari Streamlit Secrets
 try:
     OPENROUTER_API_KEY = st.secrets["LLM_BINDING_API_KEY"]
 except KeyError:
     st.error("Kunci API LLM tidak ditemukan. Harap atur 'LLM_BINDING_API_KEY' di Streamlit Secrets.")
     st.stop()
     
-# Inisialisasi klien OpenAI dengan host OpenRouter
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key=OPENROUTER_API_KEY,
@@ -29,7 +29,6 @@ async def openai_compatible_complete(prompt, system_prompt=None, history_message
     messages.extend(history_messages)
     messages.append({"role": "user", "content": prompt})
 
-    # Filter out unknown arguments from LightRAG
     kwargs_filtered = {k: v for k, v in kwargs.items() if k not in ['hashing_kv']}
 
     try:
@@ -50,6 +49,34 @@ async def openai_embed(texts):
     )
     return np.array([data.embedding for data in response.data])
 
+# --- Fungsi Baru: Memuat Dokumen dari Folder Inputs ---
+async def load_documents_from_inputs():
+    input_dir = Path("inputs")
+    if not input_dir.exists():
+        st.warning("Folder 'inputs' tidak ditemukan. Pastikan Anda telah mengunggahnya ke GitHub.")
+        return
+
+    if "documents_loaded" not in st.session_state:
+        st.session_state.documents_loaded = False
+
+    if not st.session_state.documents_loaded:
+        st.sidebar.info("Memproses dokumen dari repositori...")
+        documents = []
+        for file_path in input_dir.glob("*.md"):
+            try:
+                content = file_path.read_text(encoding="utf-8")
+                documents.append(content)
+            except Exception as e:
+                st.sidebar.error(f"Gagal memuat {file_path}: {e}")
+        
+        if documents:
+            await rag_model.insert(documents={"text_content": documents})
+            st.sidebar.success(f"{len(documents)} dokumen berhasil diproses dan diindeks!")
+        else:
+            st.sidebar.warning("Tidak ada dokumen yang valid ditemukan di folder 'inputs'.")
+            
+        st.session_state.documents_loaded = True
+
 # --- INITIALISASI LIGHTRAG ---
 rag_model = LightRAG(
     llm_model_func=openai_compatible_complete,
@@ -61,6 +88,7 @@ rag_model = LightRAG(
 try:
     asyncio.run(rag_model.initialize_storages())
     asyncio.run(initialize_pipeline_status())
+    asyncio.run(load_documents_from_inputs())
 except RuntimeError:
     pass
 
@@ -194,7 +222,7 @@ class Chatbot:
         st.sidebar.warning(f"**Peran:** {user_role}")
         st.sidebar.success(f"**Mode:** {mode}")
         
-        # --- Bagian Baru: Unggah Dokumen untuk RAG ---
+        # --- Bagian Baru: Unggah Dokumen Konteks ---
         with st.sidebar.expander("Unggah Dokumen Konteks", expanded=False):
             st.write("Unggah dokumen (teks, markdown) untuk Alma pelajari.")
             uploaded_file = st.file_uploader("Pilih file", type=["txt", "md"], key="file_uploader")
