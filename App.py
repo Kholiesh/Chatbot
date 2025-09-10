@@ -51,7 +51,6 @@ async def openai_embed(texts):
     return np.array([data.embedding for data in response.data])
 
 # --- INITIALISASI LIGHTRAG ---
-# PENTING: Lakukan inisialisasi di luar kelas agar hanya dijalankan sekali
 rag_model = LightRAG(
     llm_model_func=openai_compatible_complete,
     embedding_func=EmbeddingFunc(
@@ -195,6 +194,18 @@ class Chatbot:
         st.sidebar.warning(f"**Peran:** {user_role}")
         st.sidebar.success(f"**Mode:** {mode}")
         
+        # --- Bagian Baru: Unggah Dokumen untuk RAG ---
+        with st.sidebar.expander("Unggah Dokumen Konteks", expanded=False):
+            st.write("Unggah dokumen (teks, markdown) untuk Alma pelajari.")
+            uploaded_file = st.file_uploader("Pilih file", type=["txt", "md"], key="file_uploader")
+            if uploaded_file is not None:
+                file_content = uploaded_file.read().decode("utf-8")
+                
+                with st.spinner("Memproses dokumen..."):
+                    asyncio.run(rag_model.insert(documents={"text_content": [file_content]}))
+                st.success(f"Dokumen '{uploaded_file.name}' berhasil diunggah dan diproses!")
+        # --- Akhir Bagian Baru ---
+
         if st.sidebar.button("Mulai Sesi Baru"):
             for key in ["user_name","user_role","user_mode","messages","quiz_state","simulation_context"]:
                 if key in st.session_state:
