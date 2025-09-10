@@ -3,23 +3,25 @@ import asyncio
 from openai import OpenAI
 from lightrag import LightRAG
 from lightrag.kg.shared_storage import initialize_pipeline_status
-from lightrag.utils import EmbeddingFunc # Tambahkan ini
+from lightrag.utils import EmbeddingFunc
 import numpy as np
 
 # --- PENGATURAN KONFIGURASI ---
+# Ambil kunci API dari Streamlit Secrets
 try:
     OPENROUTER_API_KEY = st.secrets["LLM_BINDING_API_KEY"]
 except KeyError:
     st.error("Kunci API LLM tidak ditemukan. Harap atur 'LLM_BINDING_API_KEY' di Streamlit Secrets.")
     st.stop()
     
+# Inisialisasi klien OpenAI dengan host OpenRouter
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key=OPENROUTER_API_KEY,
 )
 DEFAULT_MODEL = "google/gemini-2.5-flash"
-EMBEDDING_MODEL = "text-embedding-3-large" # Dimensi 3072
-# Jika Anda ingin menggunakan dimensi yang lebih kecil, seperti 1536, gunakan model "text-embedding-3-small"
+EMBEDDING_MODEL = "text-embedding-3-large"
+LIGHTRAG_EMBEDDING_DIM = 3072
 
 # --- FUNGSI ASYNC UNTUK INJEKSI LIGHTRAG ---
 async def openai_compatible_complete(prompt, system_prompt=None, history_messages=[], **kwargs):
@@ -27,12 +29,19 @@ async def openai_compatible_complete(prompt, system_prompt=None, history_message
     messages.extend(history_messages)
     messages.append({"role": "user", "content": prompt})
 
-    response = client.chat.completions.create(
-        model=DEFAULT_MODEL,
-        messages=messages,
-        **kwargs
-    )
-    return response.choices[0].message.content
+    # Filter out unknown arguments from LightRAG
+    kwargs_filtered = {k: v for k, v in kwargs.items() if k not in ['hashing_kv']}
+
+    try:
+        response = client.chat.completions.create(
+            model=DEFAULT_MODEL,
+            messages=messages,
+            **kwargs_filtered
+        )
+        return response.choices[0].message.content
+    except Exception as e:
+        st.error(f"Terjadi kesalahan saat memanggil API LLM: {e}")
+        return f"Terjadi kesalahan: {e}"
 
 async def openai_embed(texts):
     response = client.embeddings.create(
@@ -42,10 +51,7 @@ async def openai_embed(texts):
     return np.array([data.embedding for data in response.data])
 
 # --- INITIALISASI LIGHTRAG ---
-# PENTING: Gunakan EmbeddingFunc untuk membungkus fungsi embedding Anda
-# LIGHTRAG_DIMENSION harus sesuai dengan model embedding Anda (misalnya 3072)
-LIGHTRAG_EMBEDDING_DIM = 3072
-
+# PENTING: Lakukan inisialisasi di luar kelas agar hanya dijalankan sekali
 rag_model = LightRAG(
     llm_model_func=openai_compatible_complete,
     embedding_func=EmbeddingFunc(
