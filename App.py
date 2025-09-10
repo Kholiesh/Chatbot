@@ -3,23 +3,23 @@ import asyncio
 from openai import OpenAI
 from lightrag import LightRAG
 from lightrag.kg.shared_storage import initialize_pipeline_status
+from lightrag.utils import EmbeddingFunc # Tambahkan ini
 import numpy as np
 
 # --- PENGATURAN KONFIGURASI ---
-# Ambil kunci API dari Streamlit Secrets, bukan dari .env
 try:
     OPENROUTER_API_KEY = st.secrets["LLM_BINDING_API_KEY"]
 except KeyError:
     st.error("Kunci API LLM tidak ditemukan. Harap atur 'LLM_BINDING_API_KEY' di Streamlit Secrets.")
     st.stop()
     
-# Inisialisasi klien OpenAI dengan host OpenRouter
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key=OPENROUTER_API_KEY,
 )
 DEFAULT_MODEL = "google/gemini-2.5-flash"
-EMBEDDING_MODEL = "text-embedding-3-large"
+EMBEDDING_MODEL = "text-embedding-3-large" # Dimensi 3072
+# Jika Anda ingin menggunakan dimensi yang lebih kecil, seperti 1536, gunakan model "text-embedding-3-small"
 
 # --- FUNGSI ASYNC UNTUK INJEKSI LIGHTRAG ---
 async def openai_compatible_complete(prompt, system_prompt=None, history_messages=[], **kwargs):
@@ -39,23 +39,24 @@ async def openai_embed(texts):
         model=EMBEDDING_MODEL,
         input=texts
     )
-    # LightRAG requires a NumPy array
     return np.array([data.embedding for data in response.data])
 
-
 # --- INITIALISASI LIGHTRAG ---
-# PENTING: Lakukan inisialisasi di luar kelas agar hanya dijalankan sekali
+# PENTING: Gunakan EmbeddingFunc untuk membungkus fungsi embedding Anda
+# LIGHTRAG_DIMENSION harus sesuai dengan model embedding Anda (misalnya 3072)
+LIGHTRAG_EMBEDDING_DIM = 3072
+
 rag_model = LightRAG(
     llm_model_func=openai_compatible_complete,
-    embedding_func=openai_embed,
-    # Jika Anda memiliki konfigurasi lain dari .env, tambahkan di sini
+    embedding_func=EmbeddingFunc(
+        embedding_dim=LIGHTRAG_EMBEDDING_DIM,
+        func=openai_embed
+    )
 )
-# Jalankan inisialisasi storage secara asinkron
 try:
     asyncio.run(rag_model.initialize_storages())
     asyncio.run(initialize_pipeline_status())
 except RuntimeError:
-    # Handle the case where the event loop is already running
     pass
 
 # --- Kumpulan Template Prompt Simulasi ---
@@ -155,7 +156,7 @@ class Chatbot:
     def login(self):
         col1, col2, col3, col4, col5 = st.columns((1, 2, 1, 2, 1))
         with col3:
-            st.image("wave.png", width=100)
+            st.image("https://raw.githubusercontent.com/alifrizqullah/Chatbot-AlmaLearn-GoBIG/main/container/wave.png", width=100)
         st.info("Mari berkenalan dengan Alma!")
         with st.form("login_form"):
             name = st.text_input("Nama Anda", placeholder="Masukkan nama Anda")
@@ -173,7 +174,6 @@ class Chatbot:
         final_prompt_structure = f"/[{instruction}] {user_query}"
         
         try:
-            # Gunakan asyncio.run() untuk menjalankan fungsi aquery yang asinkron
             result = asyncio.run(rag_model.aquery(final_prompt_structure))
             return result
         except Exception as e:
