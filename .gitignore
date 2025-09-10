@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+.venv/
+
+# LightRAG Cache and Storage
+rag_storage/
+lightrag_cache/
+
+# Local configuration files
+.env
